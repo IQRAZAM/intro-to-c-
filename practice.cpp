@@ -203,3 +203,56 @@
     }while(false);
     return 0;
    }*/
+  /* #include<iostream>
+   using namespace std;
+   int main(){
+    for(int i = 0;i<12;i++){
+      if(i==5){
+       // break;
+       continue;
+        
+      }
+      cout<<i<<endl;
+    }
+    return 0;
+   }*/
+   //*******pointers *******
+   //a data type whic holds thw addresse of oter data types
+   //&  adress of operator   * derefrerence of operator(value at a operator)
+/*#include<iostream>
+using namespace std;
+int main(){
+  int z = 8;
+  int* b = &z;
+  cout<<"address of a "<<b<<endl;
+  cout<<"address of a "<<&z<<endl;
+  cout<<"the value of b operator is "<<*b<<endl;
+  //pointer to pointer (a varaibble which store the address of a pointer itself )
+  int** c = &b;
+  cout<<c<<endl;
+return 0;
+}*/
+#include<iostream>
+using namespace std;
+int main(){
+int marks [] = {44,24,44,2,255,67,7,55,4,23,55};
+//cout<<marks[4]<<endl;
+//cout<<marks[0]<<endl;
+//cout<<marks[10]<<endl;
+//cout<<marks[3]<<endl;
+//can cahne the value of an array
+//marks[10] = 29;
+//cout<<marks[10]<<endl;
+//making loops in arrays 
+/*for(int i=0;i<11; i++){
+  cout<<"the value of marks "<<i<<" is "<<marks[i]<<endl;
+}*/
+//using while loop
+int a;
+/*while(a<=10){
+  cout<<marks[a]<<endl;
+  a++;
+
+}
+return 0;
+}*/
