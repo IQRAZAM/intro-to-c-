@@ -232,11 +232,11 @@ int main(){
   cout<<c<<endl;
 return 0;
 }*/
-#include<iostream>
-using namespace std;
-int main(){
-int marks [] = {44,24,44,2,255,67,7,55,4,23,55};
-//cout<<marks[4]<<endl;
+// using namespace std;
+// int main(){
+// int marks [] = {44,24,44,2,255,67,7,55,4,23,55};
+//cout<<marks[4]<<endl#include<iostream>
+//;
 //cout<<marks[0]<<endl;
 //cout<<marks[10]<<endl;
 //cout<<marks[3]<<endl;
@@ -245,10 +245,10 @@ int marks [] = {44,24,44,2,255,67,7,55,4,23,55};
 //cout<<marks[10]<<endl;
 //making loops in arrays 
 /*for(int i=0;i<11; i++){
-  cout<<"the value of marks "<<i<<" is "<<marks[i]<<endl;
+   cout<<"the value of marks "<<i<<" is "<<marks[i]<<endl;
 }*/
 //using while loop
-int a;
+// int a;
 /*while(a<=10){
   cout<<marks[a]<<endl;
   a++;
@@ -256,3 +256,128 @@ int a;
 }
 return 0;
 }*/
+//**********while**********
+/*#include<iostream>
+using namespace std;
+int main(){
+  int i = 1;
+  while(i<10){
+    cout<<i<<endl;
+    i++;
+  }
+}*/
+//*********do-while loop***********
+/*#include<iostream>
+using namespace std;
+int main(){
+  int a = 0;
+  int marks[] = {12,45,2,34,5,78,98};
+  /*do{
+    cout<<"the value of "<<a<<" is "<<marks[a]<<endl;
+    a++;
+  }while(a<6);*/
+  /*int* p = marks;
+  cout<<"the value of *p is "<<*p<<endl;
+  cout<<"the value of *(p+1) is "<<*(p+1)<<endl;
+  cout<<"the value of *(p+2) is "<<*(p+2)<<endl;
+  cout<<"the value of *(p+3) is "<<*(p+3)<<endl;
+  cout<<"the value of *(p+4) is "<<*(p+4)<<endl;
+  return 0;
+
+}*/
+//**********strusctures*********
+//you can use diffreent type of data in one type of data type
+/*#include<iostream>
+using namespace std;
+ typedef struct idols 
+ {
+  int num;
+  char favchar;
+  float salary;
+} id;
+int main(){
+  struct idols lisa ;
+ //id lisa;
+  lisa.num = 5;
+  lisa.favchar = 'z';
+  lisa.salary = 459000000;
+  cout<<"so the id number of lisa is "<<lisa.num<<endl;
+  cout<<"so the favourite character of her is "<<lisa.favchar<<endl;
+  cout<<"so the annal of salary of her is "<<lisa.salary<<endl;
+  return 0;
+}*/
+//*********unions**********
+//just like structures but providing better memory management like if you want to use only one type of data from all data then you can use union 
+/*#include<iostream>
+using namespace std;
+union money
+{
+  char rice; //4
+  float amount; //2
+  int number; //4
+  //it give give min memeory space  fpr whole data like only 4 while in structure all memory of the data is being added for final memeory
+};
+int main(){
+  union money type;
+  type.rice = 'g';
+  cout<<type.rice;
+
+return 0;
+}*/
+// make sure to use only one 
+//**********Enums*********
+//Giving values to data to make code more understandable 
+/*#include<iostream>
+using namespace std ;
+int main(){
+  enum meal {breakfast,lunch,dinner,supper};
+  meal m1 = lunch;
+  cout<<m1<<endl;
+  cout<<breakfast<<endl;
+  cout<<supper<<endl;
+  return 0;
+  
+}*/
+//********FUNCTIONS***********
+/*#include<iostream>
+using namespace std;
+sum(int a,int b){
+  int c = a+b ;
+  return c;
+}
+int main(){
+  int num1 ,num2;
+    cout<<"enter the value of num1 "<<endl;
+    cin>>num1;
+    cout<<"enter the value of num2 "<<endl;
+    cin>>num2;
+    cout<<"the sum of two numbers is "<<sum(num1 , num2)<<endl;
+  return 0;
+}*/
+//************function prototype******
+//it tells which function is going to come next and how to execute a function mainly
+//in above program if we write function sum below int main function then i won't execute without function prototype so te basic syntax is 
+/*#include<iostream>
+using namespace std;
+int sum(int a , int b );
+
+int main(){
+  int num1 ,num2;
+    cout<<"enter the value of num1 "<<endl;
+    cin>>num1;
+    cout<<"enter the value of num2 "<<endl;
+    cin>>num2;
+    cout<<"the sum of two numbers is "<<sum(num1 , num2)<<endl;
+    // num1 and num2 are actual parameters while a and b are formal parameters 
+  return 0;
+}
+sum(int a,int b){
+  int c = a+b ;
+  return c;
+}*/
+#include<iostream>
+using namespace std;
+int main(){
+
+return 0;
+}
