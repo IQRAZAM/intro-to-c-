@@ -377,7 +377,35 @@ sum(int a,int b){
 }*/
 #include<iostream>
 using namespace std;
-int main(){
-
-return 0;
+sum(int a,int b){
+  int c = a+b ;
+  return c;
+};
+/*void swap(int a,int b){        //temp a  b
+  int temp = a;               // 4    4  6
+  a =  b ;                    // 4    6  6
+  b = temp;                   // 4    6  4
+}*///call by reference 
+/*void swapPointer(int* a , int* b){
+   int temp = *a;
+   * a = *b;
+   *b = temp;
+}*/
+/*void swapPointerVar(int &a , int & b){
+   int temp = a;
+    a = b;
+    b = temp;
 }
+int main(){ 
+  int x = 3 ;
+  int y = 8;
+  cout<<x<<endl;
+  cout<<y<<endl;
+  cout<<"sum of these two numbers is "<<sum(x,y)<<endl;
+  swap(x , y );   //this swap won't work as values are being copied 
+  cout<<"the value of x is "<<x<<endl<<"the value of y is "<<y<<endl;
+  //swapPointer(&x,&y);   //it works well and swipe the values using pointer reference
+  swapPointerVar(x,y);  // this will work using reference variables 
+  cout<<"the value of x is "<<x<<endl<<"the value of y is "<<y<<endl;
+return 0;
+}*/ 
