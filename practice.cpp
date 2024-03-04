@@ -375,12 +375,12 @@ sum(int a,int b){
   int c = a+b ;
   return c;
 }*/
-#include<iostream>
-using namespace std;
-sum(int a,int b){
-  int c = a+b ;
-  return c;
-};
+// #include<iostream>
+// using namespace std;
+// sum(int a,int b){
+//   int c = a+b ;
+//   return c;
+// };
 /*void swap(int a,int b){        //temp a  b
   int temp = a;               // 4    4  6
   a =  b ;                    // 4    6  6
@@ -409,3 +409,35 @@ int main(){
   cout<<"the value of x is "<<x<<endl<<"the value of y is "<<y<<endl;
 return 0;
 }*/ 
+//****area of a circle *****
+/*#include<iostream>
+using namespace std;
+ 
+int main(){
+   float r ;
+   cout<<"enter the value of radius "<<endl;
+  cin>>r;
+  cout<<"the the area of circle of radius "<<r <<" is: " <<3.14 * r * r <<"."<<endl;
+  return 0;
+}*/
+
+  #include<iostream>
+  using namespace std;
+  int main(){
+  int arr1[10] = {1,2,3,4,5,6,7,8,9,0};
+  int arr2[10] = {1,2,3,4,5,6,7,8,9,0};
+  for(int i = 0; i<10 ;i++){
+  //cout<<arr1[i]<<endl;
+  if(arr1[i]==arr2[i]){
+    bool a = true;
+    cout<<"the elements of array are same "<<endl;
+    cout<<a<<endl;
+  }
+  else{
+    bool b = false;
+    cout<<"the corresponding elements are not same "<<endl;
+    cout<<b<<endl;
+  }
+  }
+  return 0;
+  }
