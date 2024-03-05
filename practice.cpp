@@ -421,23 +421,17 @@ int main(){
   return 0;
 }*/
 
-  #include<iostream>
-  using namespace std;
-  int main(){
-  int arr1[10] = {1,2,3,4,5,6,7,8,9,0};
-  int arr2[10] = {1,2,3,4,5,6,7,8,9,0};
-  for(int i = 0; i<10 ;i++){
-  //cout<<arr1[i]<<endl;
-  if(arr1[i]==arr2[i]){
-    bool a = true;
-    cout<<"the elements of array are same "<<endl;
-    cout<<a<<endl;
-  }
-  else{
-    bool b = false;
-    cout<<"the corresponding elements are not same "<<endl;
-    cout<<b<<endl;
-  }
-  }
-  return 0;
-  }
+  //********Default arguments *********
+//the valuse which are given by defaultt
+#include<iostream>
+using namespace std;
+int main(){
+  float moneyBack();
+float moneyBack(int mainMoney , float interest = 1.009){
+  return mainMoney + interset;
+}
+  int money = 1000;
+  cout<<"so the value of "<<money<< " Rs is ,with interest "<<moneyBack(money)<<endl;
+
+return 0;
+}
