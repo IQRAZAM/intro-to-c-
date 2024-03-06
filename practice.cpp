@@ -421,17 +421,85 @@ int main(){
   return 0;
 }*/
 
-  //********Default arguments *********
+  //********Default arguments *********//and tey shoukd be in left 
 //the valuse which are given by defaultt
-#include<iostream>
+/*#include<iostream>
 using namespace std;
-int main(){
-  float moneyBack();
-float moneyBack(int mainMoney , float interest = 1.009){
-  return mainMoney + interset;
+float moneyBack(int mainMoney , float interest = 1.213){
+  return mainMoney + interest;
 }
-  int money = 1000;
+int main(){
+
+
+  int money = 100000;
   cout<<"so the value of "<<money<< " Rs is ,with interest "<<moneyBack(money)<<endl;
 
+return 0;
+}*/
+//inline function is like request to compiler ,its upto compiler if it wants to make a function inline or not.
+//*******finding factorial**********
+/*#include<iostream>
+using namespace std;
+int factorial(int n){
+  if(n<=1){
+    return 1;
+  }
+  return n * factorial(n-1);
+}
+int main(){
+  int a ;
+  cout<<"enter the value of a : "<<endl;
+  cin>>a;
+   cout<<"so the factorial of given number "<<a<<" is "<<factorial(a);
+return 0;
+}*/
+//********function giving fibonacci sequence**********
+/*#include<iostream>
+using namespace std;
+int fibbo(int n){
+  if(n<2){
+    return 1;
+  }
+  return fibbo(n-2) + fibbo(n-1);
+}
+int main(){
+  int x;
+  cout<<"enter the value of x ";
+  cin>>x;
+cout<<"so the fibbonacci series for number "<<x<<" is "<<fibbo(x);
+return 0;
+}*/
+//*****function overloading(different functions having same name and we are using their different parameters )
+/*#include<iostream>
+using namespace std;
+int sum(int a , int b){
+  return a+b;
+}
+int sum(int a, int b, int c){
+  return a+b+c;
+}
+int main(){    //compiler first match prototype 
+  cout<<"the sum of three numbers is "<<sum(3,7,2)<<endl;
+  cout<<"the sum of two numbers is "<<sum(3,2)<<endl;
+return 0;
+}*/
+//*******finding volume using functiion*********
+#include<iostream>
+using namespace std;
+float volume(float r ,float h){
+  return 3.14 * r * r * h;
+}
+//V of cube
+float volume(float a){
+ return a * a * a;
+}
+//of a rectangle
+float volume(float l ,float h , float b){
+  return l * h * b;
+}
+int main(){
+      cout<<"the volume of a cylinder is "<<volume(3.2 , 8.9)<<endl;
+      cout<<"the volume of a cube is "<<volume(3.2 )<<endl;
+      cout<<"the volume of a rectangle is "<<volume(3.2 , 8.9,2)<<endl;
 return 0;
 }
