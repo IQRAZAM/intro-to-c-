@@ -484,7 +484,7 @@ int main(){    //compiler first match prototype
 return 0;
 }*/
 //*******finding volume using functiion*********
-#include<iostream>
+/*#include<iostream>
 using namespace std;
 float volume(float r ,float h){
   return 3.14 * r * r * h;
@@ -501,5 +501,80 @@ int main(){
       cout<<"the volume of a cylinder is "<<volume(3.2 , 8.9)<<endl;
       cout<<"the volume of a cube is "<<volume(3.2 )<<endl;
       cout<<"the volume of a rectangle is "<<volume(3.2 , 8.9,2)<<endl;
+return 0;
+}*/
+//*********classes*******
+//strutures are not secure so we use classes for security of data also functions can't be called in structures
+#include<iostream>
+using namespace std;
+class Employee{
+   private:
+     int a,b,c;
+   public:
+   int d,e;
+   void setValue(int a1,int b1,int c1);
+   void getValue(){
+      cout<<"the value of a is "<<a<<endl;
+      cout<<"the value of b is "<<b<<endl;
+      cout<<"the value of c is "<<c<<endl;
+      cout<<"the value of d is "<<d<<endl;
+      cout<<"the value of e is "<<e<<endl;
+   }
+};
+   void Employee :: setValue(int a1,int b1,int c1){
+     a = a1;
+     b = b1;
+     c = c1;
+   }
+
+int main(){
+  Employee jennie;
+  jennie.d = 23;
+  jennie.e = 2;
+  jennie.setValue(23,87,768);
+  jennie.getValue();
+
+return 0;
+}
+//******Nested Functions in classes *******
+#include<iostream>
+#include<string>
+using namespace std;
+class binary{
+  string s;
+  public:
+  void giveBinary(void);
+  void chk_binary(void);
+  void ones_complement(void);
+};
+void binary :: giveBinary(void){
+  cout<<"enter the value of a binary number "<<endl;
+  cin>>s;
+};
+void binary :: chk_binary(void){
+  for(int i =0; i<s.length();i++){
+    if(s.at(i) != '0' && s.at(i) != '1'){
+      cout<<"this is not a binary number"<<endl;
+      exit(0);
+    }
+  }
+};
+void binary :: ones_complement(void){
+  for(int i =0; i<s.length();i++){
+    if(s.at(i) == '0'){
+      s.at(i)=='1';
+    }else{
+      s.at(i)=='0';
+    }
+      
+    
+    }
+  }
+
+int main(){
+binary num;
+num.giveBinary();
+num.chk_binary();
+num.ones_complement();
 return 0;
 }
