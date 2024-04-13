@@ -505,7 +505,7 @@ return 0;
 }*/
 //*********classes*******
 //strutures are not secure so we use classes for security of data also functions can't be called in structures
-#include<iostream>
+/*#include<iostream>
 using namespace std;
 class Employee{
    private:
@@ -535,9 +535,9 @@ int main(){
   jennie.getValue();
 
 return 0;
-}
+}*/
 //******Nested Functions in classes *******
-#include<iostream>
+/*#include<iostream>
 #include<string>
 using namespace std;
 class binary{
@@ -577,4 +577,664 @@ num.giveBinary();
 num.chk_binary();
 num.ones_complement();
 return 0;
+}*/
+//********radius pf a circle ******
+/*#include<iostream>
+using namespace std;
+
+class circle{
+  private:
+  float radius;
+  public:
+  void setValue(void){
+    cout<<"enter the value of radius of the circle: "<<endl;
+    cin>>radius;
+  };
+  void getValue(void){
+    cout<<"so the value of arera of the circle is : "<<3.14 * radius * radius<<endl;
+  };
+};
+int main(){
+ circle r;
+ r.setValue();
+ r.getValue();
+return 0;
+}*/
+//********marks of a student*******
+/*#include<iostream>
+using namespace std;
+class student{
+  private:
+  int DLD;
+  int OOP;
+  int English;
+  int Physics;
+  public:
+  void setMarks (void);
+  void getMarks (void);
+};
+ void student :: setMarks(void){
+  cout<<"enter the marks of DLD "<<endl;
+  cin>>DLD;
+  cout<<"enter the marks of OOP "<<endl;
+  cin>>OOP;
+  cout<<"enter the marks of English "<<endl;
+  cin>>English;
+  cout<<"enter the marks of Physics "<<endl;
+  cin>>Physics;
+ };
+ void student :: getMarks(void){
+   cout<<"DLD : "<<DLD<<endl;
+   cout<<"OOP : "<<OOP<<endl;
+   cout<<"English : "<<English<<endl;
+   cout<<"Physics : "<<Physics<<endl;
+ };
+
+int main(){
+  student Sana;
+  student Haris;
+  student Ali;
+  Sana.setMarks();
+  cout<<"so the marks of Sana are as follows: "<<endl;
+  Sana.getMarks();
+  Haris.setMarks();
+  cout<<"so the marks of Haris are as follows: "<<endl;
+  Haris.getMarks();
+  Ali.setMarks();
+  cout<<"so the marks of Ali are as follows: "<<endl;
+  Ali.getMarks();
+return 0;
+}*/
+//***********A SHOP CLASS *********
+/*#include<iostream>
+using namespace std;
+
+class shop{
+  private:
+  int itemID[100] ;
+  int itemPrice [100];
+  int counter;
+  int n;
+  public :
+  void initcounter (void){
+     counter = 0;
+  };
+  void nValue(void){
+    cout<<"enter the no. of items you wanna give tags "<<endl;
+    cin>>n;
+  };
+  void itemId(void);
+  void DisplayPrice(void);
+  
+};
+void shop :: itemId(void){
+  for( int i=0;i<n;i++){
+    cout<<"enter the Id of item no. "<<counter + 1<<endl;
+    cin>>itemID[i];
+    cout<<"enter the price of the item"<<endl;
+    cin>>itemPrice[i];
+    counter ++;
+  }
+};
+void shop:: DisplayPrice(void){
+  for( int a=0;a<counter;a++){
+    cout<<"so the price of the item with item id "<<itemID[a]<<" is "<<itemPrice[a]<<endl;
+  }
+};
+int main(){
+ shop coffee ;
+ coffee.initcounter();
+ coffee.nValue();
+ coffee.itemId();
+ coffee.DisplayPrice();
+return 0;
+}*/
+
+
+
+
+/*#include<iostream>
+using namespace std;
+class student{
+  private:
+  string name;
+  int rollNo;
+  int age;
+  float cgpa;
+  public:
+   int ex = 10;
+   void inputInformation(void){
+    cout<<"enter the name of the student"<<endl;
+    cin>>name;
+    cout<<"enter the roll no ."<<endl;
+    cin>>rollNo;
+    cout<<"enter the age "<<endl;
+    cin>>age;
+    cout<<"enter the cpga"<<endl;
+    cin>>cgpa;
+   };
+   void outputshutup(void){
+    cout<<"so the name of the student is "<<name<<" roll no is "<<rollNo<<" age is "<<age<<"  and cga is "<<cgpa<<endl;
+   };
+
+};
+int main(){
+   student CR;
+   student NawaalTuchi;
+   CR.ex;
+   CR.inputInformation();
+   CR.outputshutup();
+   NawaalTuchi.inputInformation();
+   NawaalTuchi.outputshutup();
+
+return 0;
+}*/
+//*********customer class********
+/*#include<iostream>
+using namespace std;
+class customer{
+  
+  private:
+   int customerID;
+   string FirstName;
+   string lastName;
+   string address;
+   int creditLimit;
+  public:
+  
+  void setCustomerData(void){
+     cout<<"enter the id of the customer "<<endl;
+     cin>>customerID;
+     cout<<"enter te first name of the customer "<<endl;
+     cin>>FirstName;
+     cout<<"enter the last name of the customer"<<endl;
+     cin>>lastName;
+     cout<<"enter the address of the student"<<endl;
+     cin>>address;
+     cout<<"enter the credit limit of the customer"<<endl;
+     cin>>creditLimit;
+  };
+ void getCustomerData(void){
+  cout<<"so the  id of the customer is "<<customerID<<" ,  first name of the customer "<<FirstName<<" last name is "<<lastName<<" address is "<<address<<" and credit limit "<<creditLimit<<endl;
+ }
+
+};
+int main(){
+  customer c1;
+  customer c2;
+  c1.setCustomerData();
+  c1.getCustomerData();
+  c2.setCustomerData();
+  c2.getCustomerData();
+
+
+return 0;
+}*/
+//********class question********
+/*#include<iostream>
+using namespace std;
+class customer{
+  private:
+  int customerID;
+  string FirstName;
+  string lastName;
+  string address;
+  int creditLimit;
+  public:
+  customer(){};
+  customer(int ID , string fName,string lName,string location , int c_limit);
+  void setCustomerId(void){
+    this->customerID = customerID;
+  };
+  void setFirstName(void){
+    this->FirstName = FirstName;
+  };
+  void setLastName(void){
+    this->lastName = lastName;
+  };
+  void setAddress(void){
+    this->address = address;
+  };
+  void setCreditLimit(void){
+    this->creditLimit = creditLimit;
+  };
+  void getCustomerData(void){
+    cout<<"enter the id of the customer "<<endl;
+     cin>>customerID;
+     cout<<"enter te first name of the customer "<<endl;
+     cin>>FirstName;
+     cout<<"enter the last name of the customer"<<endl;
+     cin>>lastName;
+     cout<<"enter the address of the student"<<endl;
+     cin>>address;
+     cout<<"enter the credit limit of the customer"<<endl;
+     cin>>creditLimit;
+  };
+  void Display(void){
+    cout<<"so the customer with ID "<<customerID<<endl<<" has first name "<<FirstName<<endl<<" and last name as "<<lastName<<endl<<" . His address is " <<address<<endl<<" and  his credit limit is "<<creditLimit<<endl;
+  };
+
+};
+customer :: customer(int ID , string fName,string lName,string location , int limit)
+{
+        string firstName = fName;
+        int customerID = ID ;
+       string lastName = lName;
+       string address = location;
+       int creditLimit = limit;
+  };
+int main(){
+  customer C1;
+  int ID ;
+   string fName;
+   string lName;
+   string location ;
+   int limit;
+  C1 = customer(ID,fName,lName,location,limit);
+  C1.getCustomerData();
+  C1.Display();
+
+return 0;
+}*/
+//******STATIC DATA MEMEBERS**********
+//a type of variable which we can use for every object in class is lnown as static varibale and its got its own ways to be declared (make sure to declare it outside the class as well ,default value is always zero ,a count given below is hared by every object not only by one so thats why it will increment everytime we use a new object )
+/*#include<iostream>
+using namespace std;
+class Employee{
+  int id;
+   static int count;
+  public:
+  int setData(void){
+    cout<<"enter the vakue of id "<<endl;
+    cin>>id;
+    count++;
+  }
+  int getData(void){
+    cout<<"so the id of the employee is "<<id<<" and count is "<<count<<endl;
+  }
+};
+int Employee :: count;
+int main(){
+  Employee harry,rohan,tasha,adam;
+  harry.setData();
+  harry.getData();
+
+  rohan.setData();
+  rohan.getData();
+
+  tasha.setData();
+  tasha.getData();
+
+  adam.setData();
+  adam.getData();
+
+
+return 0;
+}*/
+//********STATIC FUNCTION ***********
+//a type of function which can access all types of static memebers only is known as static function
+/*#include<iostream>
+using namespace std;
+class Employee{
+  int id;
+   static int count;
+  public:
+  int setData(void){
+    cout<<"enter the vakue of id "<<endl;
+    cin>>id;
+    count++;
+  }
+  int getData(void){
+    cout<<"so the id of the employee is "<<id<<" and count is "<<count<<endl;
+  }
+  static void getCount(void){
+    //count<<id;   (it will throw an error as id is not a static varaible )
+    cout<<"so the value of count is "<<count<<endl;
+  }
+};
+int Employee :: count;
+int main(){
+  Employee harry,rohan,tasha,adam;
+  harry.setData();
+  harry.getData();
+  Employee::getCount();
+
+  rohan.setData();
+  rohan.getData();
+Employee::getCount();
+
+  tasha.setData();
+  tasha.getData();
+  Employee::getCount();
+
+  adam.setData();
+  adam.getData();
+
+
+return 0;
+}*/
+ //*******array of objects ********
+ /*#include<iostream>
+ using namespace std;
+ class student{
+  int rollNo ;
+  int marks;
+  public:
+  int setrollNo(){
+    marks = 100;
+    cout<<"enter the roll no. of the student "<<endl;
+    cin>>rollNo;
+  }
+  int getrollNo(){
+    cout<<"so the roll no. of the student is "<<rollNo<<" with marks "<<marks<<endl;
+  }
+ };
+ int main(){
+  student class3[10];
+  for(int i=0 ; i<10 ; i++){
+    class3[i].setrollNo();
+    class3[i].getrollNo();
+  }
+ 
+ return 0;
+ }*/
+
+ //******passing objects as functions *********
+ /*#include<iostream>
+ using namespace std;
+ class complex{
+  int a;
+  int b ;
+  public:
+  void setData(int s1 , int s2){
+    a = s1;
+    b = s2;
+  }
+  void setDataSum(complex d1 , complex d2){ // d1 and d2 being objects of complex class and are used in a function
+    a = d1.a + d2.a ;
+    b = d1.b + d2.b ; 
+  }
+  void printNumber(){
+    cout<<"so your complex number is "<<a<<" + "<<b<<"i"<<endl;
+  }
+ };
+ int main(){
+  complex x1 ,x2,x3;
+  x1.setData(2,4);
+  x1.printNumber();
+  x2.setData(3,7);
+  x2.printNumber();
+  x3.setDataSum(x1,x2);
+  x3.printNumber();
+
+ 
+ return 0;
+ }*/
+
+ //*******friend function*******
+ //a function outside the class cannot access the private data of the class normally,but  if we decalre it as friend function then it can do so ,  but it still cannot be called by using objects in class as it is a foriegn function which got little permissions ,contains objects as arguments , can be invoked without the help of any object ,can be decalred inside public or private part of the class 
+ /*#include<iostream>
+ using namespace std;
+ class complex {
+  int a;
+  int b ; 
+  public:
+  int setNumber( int n1 , int n2){
+    a = n1;
+    b = n2;
+  }
+  void printNumber(){
+    cout<<"so the complex number is "<<a<<" + "<<b<<"i"<<endl;
+  }
+  friend complex sumComplex(complex q1 , complex q2);
+
+ };
+ complex sumComplex(complex q1 , complex q2){
+  complex q3;
+  q3.setNumber((q1.a+q2.a),(q1.b+q2.b));
+    return q3 ;
+  
+
+ }
+ int main(){
+   complex c1 ,c2 ,c3,sum;
+   c1.setNumber(1,3);
+   c1.printNumber();
+   c2.setNumber(1,6);
+   c2.printNumber();
+  //c3.sumComplex(c1,c2);  can not call it directly as it is not declared in the class
+  sum = sumComplex(c1,c2);
+  sum.printNumber();
+ return 0;
+ }*/
+
+ //*****making function of one class friend of another class 
+ /*#include<iostream>
+ using namespace std;
+ class complex;
+ class calculator{
+  public:
+   int add(int a, int b){
+    return (a+b);
+   }
+   int sumRealComplex(complex,complex);
+ };
+ class complex{
+  int a;
+  int b;
+  friend int calculator::sumRealComplex(complex,complex);
+  public:
+  int setNumber(int n1 , int n2){
+    a = n1;
+    b = n2;
+  }
+  int printData(){
+    cout<<"so the complex number is "<<a<<" + "<<b<<"i"<<endl;
+  }
+ };
+ int calculator::sumRealComplex(complex q1,complex q3){
+    return (q1.a + q3.a);
+ }
+ int main(){
+    complex x1,x2;
+    x1.setNumber(2,6);
+    x1.printData();
+    x2.setNumber(7,9);
+    x2.printData();
+    calculator c3;
+    int calc = c3.sumRealComplex(x1,x2);
+    cout<<"so the sum of rea parts of x1 and x2 are "<<calc<<endl;
+ return 0;
+ }*/
+
+ //******** making whole class as friend to another class
+
+/*#include<iostream>
+ using namespace std;
+ class complex;
+ class calculator{
+  public:
+   int add(int a, int b){
+    return (a+b);
+   }
+   int sumRealComplex(complex,complex);
+   int sumCompComplex(complex,complex);
+ };
+ class complex{
+  int a;
+  int b;
+  friend class calculator;
+  public:
+  int setNumber(int n1 , int n2){
+    a = n1;
+    b = n2;
+  }
+  int printData(){
+    cout<<"so the complex number is "<<a<<" + "<<b<<"i"<<endl;
+  }
+ };
+ int calculator::sumRealComplex(complex q1,complex q3){
+    return (q1.a + q3.a);
+ }
+ int calculator::sumCompComplex(complex q1,complex q3){
+    return (q1.b + q3.b);
+ }
+ int main(){
+    complex x1,x2;
+    x1.setNumber(2,6);
+    x1.printData();
+    x2.setNumber(7,9);
+    x2.printData();
+    calculator c3;
+    int calc = c3.sumRealComplex(x1,x2);
+    cout<<"so the sum of rea parts of x1 and x2 are "<<calc<<endl;
+    calculator c4;
+    int calculus = c4.sumCompComplex(x1,x2);
+    cout<<"so the sum of complex parts of x1 and x2 are "<<calculus<<endl;
+ return 0;
+ }*/
+  //**********example of friend function ******
+ /* #include<iostream>
+  using namespace std;
+  class Y;
+  class X {
+    int num1 ;
+    public:
+    int setValue(int a){
+      num1 = a;
+    }
+    friend void add(X,Y);
+  };
+  class Y {
+    int num2 ;
+    public:
+    int setData(int b){
+      num2 = b;
+    }
+    friend void add(X,Y);
+  };
+  void add(X z1 , Y z2){
+    cout<<"suming of numbers is "<<z1.num1 + z2.num2<<endl;
+  };
+  int main(){
+    X c1;
+    c1.setValue(4);
+    Y c2;
+    c2.setData(6);
+   add(c1,c2);
+  
+  return 0;
+  }*/
+
+  //*********CONSTRUCTORS *********
+  //constructor is a specail memeber function with the same name as of the class and it is used to initalize the obje cts of it's class .is is automatically invoked whenever an object is created .should be in the public secton of the class. don't have return types . we cannot refer to their address.
+  /*#include<iostream>
+  using namespace std;
+   class complec{
+    int a , b ;
+    public:
+     complec(void); //comstructor function a default one as it takes no parameter
+     int printData(){
+    cout<<"so the complex number is "<<a<<" + "<<b<<"i"<<endl;
+  }
+
+   };
+   complec :: complec(void){
+    a = 4;
+    b = 45;
+    cout<<"Doing great bro "<<endl;
+   }
+  int main(){
+  complec q;
+  q.printData();
+  return 0;
+  }*/
+  //***********parameterized constructor *******
+  /*default constructor: it takes no parameter and of couse is invoked or called automatically while permetarized constructor : it takes paarmeter and again can be invoked automatically ut takes parameter values */
+  /*#include<iostream>
+  using namespace std;
+  class complex{
+    int a;
+    int b;
+    public:
+    complex(int , int );
+    void printValue(){
+      cout<<"so the complex number is "<<a<<" + "<<b<<"i"<<endl;
+    }
+  };
+  complex::complex(int x,int y){
+    a = x;
+    b = y;
+  };
+  int main(){
+  complex w(3,9); //implicit method
+
+  w.printValue();
+  complex s = complex(5,0); //explicit method
+  s.printValue();
+  return 0;
+  }*/
+  //*********8QUESTION******
+  //create a function which takes two point objects and computes the distance between those two points
+//Hint :make it a friend function
+/*#include<iostream>
+#include<cmath>
+using namespace std;
+class point{
+    int x ,y ;
+    friend void distance(point o1 ,point o2 );
+    public:
+    point (int a ,int b){
+        x=a;
+        y=b;
+    }
+    void display(){
+        cout<<"("<<x<<","<<y<<")"<<endl;
+    }
+};
+void distance(point o1 ,point o2){
+    float dist;
+dist=sqrt(pow(o2.x-o1.x ,2)+pow(o2.y-o1.y ,2));   //pow used to take squre as 2 is given if this 2 was 3 then it meant its cube and just like that 
+cout<<dist<<endl;
 }
+int main()
+{
+   point p(1,1);
+   p.display();
+   point q(2,2);
+   q.display(); 
+   distance(p,q);
+
+    return 0;
+}*/
+//AGAIN
+#include<iostream>
+#include<cmath>
+using namespace std; 
+class point{
+  int a;
+  int b ;
+  public:
+  friend void distance(point q1,point q2);
+  point(int x ,int y){
+    a = x;
+    b = y;
+  }
+  void display(){
+    cout<<"so the point is ("<<a<<" , "<<b<<")"<<endl;
+  }
+};
+void  distance (point q1 , point q2){
+ float disc;
+ disc = sqrt((pow(q2.a-q1.a,2))+(pow(q2.b-q1.b,2)));
+ cout<<disc;
+ }
+int main(){
+point zebra(3,8);
+zebra.display();
+point cheetah(9,5);
+cheetah.display();
+distance(zebra,cheetah);
+return 0;
+}
+
