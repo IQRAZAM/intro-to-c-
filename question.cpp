@@ -390,11 +390,11 @@ return 0;
  int main(){
  int i,j;
  for(i=1 ; i<=5 ; i++){
-  for(j=5; j>=1 ; j--){
-    if(j>=i){
+  for(j=1; j<=5 ; j++){
+    if(j<=6-i){
       cout <<" * ";
     }else{
-      cout<<"";
+      cout<<"   ";
     }
   }
   cout<<endl;
@@ -418,7 +418,7 @@ return 0;
  return 0;
  }*/
  //Q 25 star pattern 
- /*#include<iostream>
+/*#include<iostream>
  using namespace std;
  int main(){
  for(int i=5; i>=1; i--){
@@ -450,15 +450,15 @@ return 0;
  return 0;
  }*/
  //Q 27 pattern
-/* #include<iostream>
+ /*#include<iostream>
  using namespace std;
  int main(){
  for(int i=1; i<=5; i++){
   for(int j=1; j<=9; j++){
     if(j>=i && j<=10-i){
-      cout<<"*";
+      cout<<" * ";
     }else{
-      cout<<" ";
+      cout<<"   ";
     }
   }
   cout<<endl;
@@ -521,7 +521,7 @@ for(int i=1; i<=9; i++){
 return 0;
 }*/
  //Q 31 pattern
-/* #include<iostream>
+ /*#include<iostream>
 using namespace std;
 int main(){
 for(int i=1; i<=5; i++){
@@ -830,7 +830,7 @@ for(int i=1; i<=5; i++){
 return 0;
 }*/
 //Q 48
-#include<iostream>
+/*#include<iostream>
 using namespace std;
 int main(){
 for(int i=1; i<=9; i++){
@@ -844,8 +844,206 @@ for(int i=1; i<=9; i++){
   cout<<endl;
 }
 return 0;
+}*/
+//Q49
+
+/*#include<iostream>
+using namespace std;
+int main(){
+  int k=0;
+for(int i=1; i<=9; i++){
+  i<=5?k++:k--;
+  for(int j=1; j<=9; j++){
+    if(j==5 || i==5 || j==6-k || j==4+k){
+      cout<<" * ";
+    }else{
+      cout<<"   ";
+    }
+  }
+  cout<<endl;
+}
+return 0;
+}
+*/
+//Q50 
+/*#include<iostream>
+using namespace std;
+int main(){
+int i,j,k=0;
+for(i=1;i<=9;i++){
+  i<=5?k++:k--;
+  for(j=1;j<=9;j++){
+    if(j==5 || i==5 || j==k || j==10-k){
+      cout<<" * ";
+    }else{
+      cout<<"   ";
+    }
+  }
+  cout<<endl;
+}
+return 0;
+}*/
+//Q51
+/*#include<iostream>
+using namespace std;
+int main(){
+int i,j;
+for(i=1;i<=5;i++){
+
+  for(j=1;j<=9;j++){
+    if(j>=6-i && j<=10-i){
+      cout<<" * ";
+    }else{
+      cout<<"   ";
+    }
+  }
+  cout<<endl;
+}
+return 0;
+}*/
+//Q52
+/*#include<iostream>
+using namespace std;
+int main(){
+int i,j;
+for(i=1;i<=5;i++){
+
+  for(j=1;j<=9;j++){
+    if(j>=6-i && j<=10-i){
+      cout<<" * ";
+    }else{
+      cout<<"   ";
+    }
+  }
+  cout<<endl;
+}
+return 0;
+}*/
+//Q53 PRINTING ALPJABETS AS  PATTERNS 
+/*#include<iostream>
+using namespace std;
+int main(){
+int i , j;
+char c;
+for(i=1 ; i<=5 ; i++){
+  c = 'A';  // will be inside loop if we want  to start everyline from a
+  for(j=1 ; j<=5 ; j++){
+    if(j<=i){
+      cout<<" "<<c;
+      c++;
+    }else{
+      cout<<" ";
+    }
+  }
+  cout<<endl;
+}
+return 0;
+}*
+//Q54 it is also known as floyde triangle which is a triangle of alphabets or also may be of numbers where ever row got the same no. of elements as its number like 1st got one element third got three elements etc 
+/*#include<iostream>
+using namespace std;
+int main(){
+int i , j;
+char c;
+  c = 'A';  // will be INSIDE loop if we want  pattern keep going  from a
+for(i=1 ; i<=5 ; i++){
+  for(j=1 ; j<=5 ; j++){
+    if(j<=i){
+      cout<<" "<<c;
+      c++;
+    }else{
+      cout<<" ";
+    }
+  }
+  cout<<endl;
+}
+return 0;
+}*/
+//Q55 find the max element of an array 
+/*#include<iostream>
+using namespace std;
+int main(){
+int n,max;
+cout<<"enter the length of an array "<<endl;
+cin>>n;
+int arr[n];
+for(int i=0; i<n ; i++){
+  cout<<"enter array values now "<<endl;
+  cin>>arr[i];
+}
+max = arr[0];
+for(int i = 0; i<n ; i++){
+  if(max<arr[i]){
+    max=arr[i];
+  }
+}
+cout<<"hence the max value from the array is "<<max<<endl;
+return 0;
+}*/
+//Q 56 remove a vowel from a string 
+/*#include<iostream>
+#include<string.h>
+using namespace std;
+int main(){
+ string str;
+ cout<<"enter the string you want to enter"<<endl;
+ getline(cin,str);
+ 
+ for(int i=0 ; i<str.length() ; i++){
+  if(str[i]=='a' || str[i]=='A'){
+    continue;
+  }else if(str[i]=='e' || str[i]=='E'){
+    continue;
+  }else if(str[i]=='i' || str[i]=='I'){
+    continue;
+  }else if(str[i]=='o' || str[i]=='O'){
+    continue;
+  }else if(str[i]=='u' || str[i]=='U'){
+    continue;
+  }
+  else{
+    cout<<str[i];
+  }
+  }
+
+return 0;
+}*/
+//Q57 check if the gven number is a perfect square or not 
+/*#include<iostream>
+#include<math.h>
+using namespace std;
+int main(){
+  int num;
+  int root;
+
+cout<<"enter a number you want to get perfect square of"<<endl;
+cin>>num;
+root = sqrt(num);
+if(root*root == num){
+  cout<<"it a perfect square ";
+}else{
+  cout<<"it is not a perfect square";
+}
+return 0;
+}*/
+//Q 58 find all the factors of a number 
+#include <iostream>
+using namespace std;
+
+void factors(int num) {
+    int i;
+    for(i=1; i <= num; i++) {
+        if (num % i == 0)
+            cout << i << " ";
+    }
 }
 
+int main() {
+    int num = 6;
+    cout << "The factors of " << num << " are : ";
+    factors(num);
+    return 0;
+}
 
 
 

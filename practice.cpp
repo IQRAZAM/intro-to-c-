@@ -141,7 +141,7 @@
     if(age<18){
       cout<<"you cannot enter in the party!!"<<endl;
     }else if(age == 18){
-      cout<<"you will get a kid pas sto the party"<<endl;
+      cout<<"you will get a kid pass to the party"<<endl;
     }else{
       cout<<"welcome to the party!!"<<endl;
     }
@@ -438,6 +438,7 @@ return 0;
 }*/
 //inline function is like request to compiler ,its upto compiler if it wants to make a function inline or not.
 //*******finding factorial**********
+//recurring function 
 /*#include<iostream>
 using namespace std;
 int factorial(int n){
@@ -578,7 +579,7 @@ num.chk_binary();
 num.ones_complement();
 return 0;
 }*/
-//********radius pf a circle ******
+//********radius of a circle ******
 /*#include<iostream>
 using namespace std;
 
@@ -586,18 +587,18 @@ class circle{
   private:
   float radius;
   public:
-  void setValue(void){
+  void getValue(void){
     cout<<"enter the value of radius of the circle: "<<endl;
     cin>>radius;
   };
-  void getValue(void){
+  void getArea(void){
     cout<<"so the value of arera of the circle is : "<<3.14 * radius * radius<<endl;
   };
 };
 int main(){
  circle r;
- r.setValue();
  r.getValue();
+ r.getArea();
 return 0;
 }*/
 //********marks of a student*******
@@ -721,7 +722,7 @@ class student{
 int main(){
    student CR;
    student NawaalTuchi;
-   CR.ex;
+   cout<<CR.ex;
    CR.inputInformation();
    CR.outputshutup();
    NawaalTuchi.inputInformation();
@@ -1208,7 +1209,7 @@ int main()
     return 0;
 }*/
 //AGAIN
-#include<iostream>
+/*#include<iostream>
 #include<cmath>
 using namespace std; 
 class point{
@@ -1236,5 +1237,337 @@ point cheetah(9,5);
 cheetah.display();
 distance(zebra,cheetah);
 return 0;
+}*/
+//***********CONSTRUCTOR OVERLOADING ********
+/*#include<iostream>
+using namespace std;
+class complex{
+  int a,b,c;
+  
+  public:
+  complex(int x,int y ,int z=56){ //can use constructor with default arguments 
+    a = x;
+    b = y;
+    c=z;
+  }
+  complex(int x ){  //the paraememters that match the function will use the constructor accordingly in more than two functions 
+  a=x;
+ b = 0;
+  }
+  void printNum(){
+    cout<<"so the number is "<<a<< " + "<< b <<c<<endl;
+  }
+};
+int main(){
+complex c(3,6);
+c.printNum();
+complex b(2);
+b.printNum();
+return 0;
+}*/
+//*******DYNAMIC INITIALIZATION OF OBJECT *******
+//we decide the type of the object when the user gives input like a value is int float etc 
+/*#include<iostream>
+using namespace std;
+class BankDeposit{
+  int principal;
+  int years;
+  int interestRate;
+  int returnAmount;
+  public:
+  BankDeposit(){}
+  BankDeposit(int p,int y, float r);
+  BankDeposit(int p , int y , int r);
+  void show();
+};
+BankDeposit :: BankDeposit(int p,int y, float r){
+  principal = p;
+  years = y ; 
+  interestRate = r;
+  returnAmount = principal;
+  for(int i = 0; i<y ; i++){
+    returnAmount= returnAmount * (1+interestRate);
+  }
+}
+BankDeposit :: BankDeposit(int p,int y , int r){
+  principal = p;
+  years = y ; 
+  interestRate = float(r)/100;
+  returnAmount = principal;
+  for(int i = 0; i<y ; i++){
+    returnAmount= returnAmount * (1+interestRate);
+  }
+}
+void BankDeposit :: show(){
+  cout<<"principal amount was "<<principal<<" return value after "<<years<<" yaers is "<<returnAmount<<endl;
+}
+int main(){
+BankDeposit bd1,bd2,bd3;
+int p ,y ,R;
+float r;
+cout<<"enter the value of p ,y and r "<<endl;
+cin>>p>>y>>r;
+bd1 = BankDeposit( p , y , r);
+bd1.show();
+
+cout<<"enter the value of p ,y and R "<<endl;
+cin>>p>>y>> R;
+bd1 = BankDeposit( p , y , R);
+bd1.show();
+return 0;
+}*/
+//***********COPY CONSTRUCTOR**********
+//oue compiler allocates a default copy constructor to every program but firts it checks if the constructor is present or not 
+/*#include<iostream>
+using namespace std;
+class number{
+  int a = 2;
+  public:
+  number(){};
+  number(int num){
+    a = num;
+  }
+ void  Display(){
+   cout<<"so the default value of number is "<<a<<endl;
+  }
+  number(number &obj){
+    cout<<"this is a copy constructorrrrr"<<endl;
+    a = obj.a;
+  }
+};
+int main(){
+number q1 , w2(67),y;
+q1.Display();
+w2.Display();
+number r(w2); //copy constructior invoked 
+y = w2;  //copy constructor wont be invoked bc y is already being called it should be called in a Conctructor
+r.Display();
+return 0;
+}*/
+//*****************DESTRUCTOR
+//neither takes an argument nor retuens a value 
+//can be called by compiler automatically
+/*#include<iostream>
+using namespace std;
+int count = 0;
+class num{
+  public:
+  num(){
+    count++;
+    cout<<"this is the time when the constructor is called for bject no. "<<count<<endl;
+
+  }
+  ~num(){
+    cout<<"this is the time when the destructor is being called off for the object  no. "<<count<<endl;
+    count--;
+  }
+};
+int main(){
+  cout<<"we are in main"<<endl;
+  cout<<"this is the time we make first object"<<endl;
+  num q1;
+  cout<<"entering block"<<endl;
+  {
+    cout<<"creating object 1 and 2 "<<endl;
+    num q2,q3;
+    cout<<"exiting"<<endl;
+  }
+cout<<"reentering in main and working on first object"<<endl;
+  
+return 0;
+}*/
+// a FUNCTION WHICH FINDS SQUARE ROOT OF A NUMBER 
+/*#include<iostream>
+#include<cmath>
+using namespace std;
+float squareRoot(float num);
+int main(){
+ float number;
+ cin>>number;
+ float response;
+ response = squareRoot(number);
+ cout<<"so the square root of the given number is "<<response<<endl;
+return 0;
+}
+float squareRoot(float num){
+  float answer;
+  answer = sqrt(num);
+  return answer;
+}*/
+// ARRAY AS A PARAMETER OF A FUNCTION 
+/*#include<iostream>
+using namespace std;
+void print(int A[] ,int length){
+  for(int i = 0 ;i<5;i++){
+    cout<<A[i]<<" ";
+    
+  }
+}
+int main(){
+int arr[5]={6,22,57,8,9};
+print(arr,5);
+return 0;
+}*/
+//SEARCHING ARRAY BY LINAER SEARACH 
+/*#include<iostream>
+using namespace std;
+void search( int A[] ,int n , int data ){
+  for(int i=0;i<n;i++){
+    if( A[i]==data){
+      cout<<data<<" is present in array"<<endl;
+      return ;
+    }
+  }
+  cout<<"it is not present in array ";
+}
+int main(){
+  int arr[] = {2,5,6,8,9};
+search(arr,5,5);
+return 0;
+}*/
+//SEARCHING ARRAY BY BINARY SEARCH 
+/*#include<iostream>
+using namespace std;
+void BinarySearch( int A[] ,int n , int data ){
+  int s=0;
+  int e=n;
+
+  while(s<=e){
+    
+    int mid = (s+e)/2 ;
+    if(A[mid]==data){
+      cout<<data<<" is present at index "<<mid<<endl;
+      return;
+    }else if (A[mid]>data){
+      e = mid-1;
+    }else{
+      s=mid + 1;
+    }
+}
+cout<<"not present";
+}
+int main(){
+  int arr[] = {2,5,6,8,9};
+BinarySearch(arr,5,5);
+return 0;
+}*/
+//SORTING OF AN ARRAY THROUGH SELECTION METHOD (swap first element with last if smaller and keep doing it )
+/*#include<iostream>
+using namespace std;
+int main(){
+int n;
+cin>>n;
+int arr[n];
+
+for(int i=0;i<n;i++){
+  cin>>arr[i];
+}
+for(int i=0; i<n-1; i++){
+  for(int j=i+1 ; j<n; j++){
+    if(arr[j] < arr[i]){
+      int temp = arr[j];
+      arr[j] = arr[i];
+      arr[i] = temp ;
+    }
+  }
+}
+for(int i = 0; i<n; i++){
+  cout<<arr[i]<<" ";
+}
+return 0;
+}*/
+//SORTING OF ARRAY USING BUBBLE METHOD ( reapetedly swap two adjacent elemnts if they are in wrong order )
+/*#include<iostream>
+using namespace std;
+int main(){
+int n;
+cin>>n;
+int arr[n];
+
+for(int i=0;i<n;i++){
+  cin>>arr[i];
+}
+int counter=1;
+while(counter<n-1){
+  for(int i=0; i<n-counter; i++){
+  if(arr[i]>arr[i+1]){
+    int temp = arr[i];
+    arr[i] = arr[i+1];
+    arr[i+1] = temp;
+  }
+  }
+  counter ++;
+}
+for(int i = 0; i<n; i++){
+  cout<<arr[i]<<" ";
 }
 
+return 0;
+}*/
+//SORTING OF AN ARRAY USING INSERTION METHOD 
+/*#include<iostream>
+using namespace std;
+int main(){
+int n;
+cin>>n;
+int arr[n];
+
+for(int i=0;i<n;i++){
+  cin>>arr[i];
+}
+for(int i=1; i<n; i++){
+  int current = arr[i];
+  int j = i-1;
+  while(arr[j]>current && j>=0){
+    arr[j+1]=arr[j];
+    j--;
+
+  }
+  arr[j+1] = current;
+
+
+}
+for(int i=0;i<n;i++){
+  cout<<arr[i]<<" ";
+}
+return 0;
+}*/
+//MAX OF iTH IN AN ARRAY 
+/*#include<iostream>
+using namespace std;
+int main(){
+int n;
+int mx = 0;
+cin>>n;
+int arr[n];
+for(int i=0; i<n; i++){
+  cin>>arr[i];
+}
+for(int i=0; i<n; i++){
+int mx = max(mx , arr[i]);
+cout<<mx<<" ";
+ 
+}
+return 0;
+}*/
+//MERGING OF TWO ARRAYS INTO THIRD ONE 
+/*#include<iostream>
+using namespace std;
+int main(){
+int a[] = {1,4,6,7};
+int b[] = {3,885,13,1,87};
+int al = sizeof(a)/sizeof(a[0]);
+int bl = sizeof(b)/sizeof(b[0]);
+int cl = al +bl ;
+int c[cl];
+for(int i=0 ; i<al;i++){
+  c[i] = a[i];
+}
+for(int i=0 ; i<bl;i++){
+  c[al + i] = b[i];
+}
+for(int i=0 ; i<cl;i++){
+  cout<< c[i]<<" ";
+}
+return 0;
+}*/
