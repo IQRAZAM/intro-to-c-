@@ -224,19 +224,19 @@ using namespace std;
 int main(){
   int z = 8;
   int* b = &z;
-  cout<<"address of a "<<b<<endl;
-  cout<<"address of a "<<&z<<endl;
+  cout<<"address of z "<<b<<endl;
+  cout<<"address of b "<<&z<<endl;
   cout<<"the value of b operator is "<<*b<<endl;
   //pointer to pointer (a varaibble which store the address of a pointer itself )
   int** c = &b;
   cout<<c<<endl;
 return 0;
 }*/
+//#include<iostream>
 // using namespace std;
 // int main(){
 // int marks [] = {44,24,44,2,255,67,7,55,4,23,55};
-//cout<<marks[4]<<endl#include<iostream>
-//;
+//cout<<marks[4]<<endl;
 //cout<<marks[0]<<endl;
 //cout<<marks[10]<<endl;
 //cout<<marks[3]<<endl;
@@ -245,7 +245,7 @@ return 0;
 //cout<<marks[10]<<endl;
 //making loops in arrays 
 /*for(int i=0;i<11; i++){
-   cout<<"the value of marks "<<i<<" is "<<marks[i]<<endl;
+   cout<<"the value of marks "<<i+1<<" is "<<marks[i]<<endl;
 }*/
 //using while loop
 // int a;
@@ -547,6 +547,7 @@ class binary{
   void giveBinary(void);
   void chk_binary(void);
   void ones_complement(void);
+  void display(void);
 };
 void binary :: giveBinary(void){
   cout<<"enter the value of a binary number "<<endl;
@@ -561,22 +562,26 @@ void binary :: chk_binary(void){
   }
 };
 void binary :: ones_complement(void){
+  string temp = ""; // create a temporary string to store the one's complement
   for(int i =0; i<s.length();i++){
     if(s.at(i) == '0'){
-      s.at(i)=='1';
+      temp += '1'; // append '1' to the temporary string
     }else{
-      s.at(i)=='0';
-    }
-      
-    
+      temp += '0'; // append '0' to the temporary string
     }
   }
+  s = temp; // assign the temporary string back to s
+};
+  void binary :: display(void){
+  cout<<"The one's complement is: "<<s<<endl;
+};
 
 int main(){
 binary num;
 num.giveBinary();
 num.chk_binary();
 num.ones_complement();
+num.display();
 return 0;
 }*/
 //********radius of a circle ******
@@ -1128,7 +1133,7 @@ return 0;
   }*/
 
   //*********CONSTRUCTORS *********
-  //constructor is a specail memeber function with the same name as of the class and it is used to initalize the obje cts of it's class .is is automatically invoked whenever an object is created .should be in the public secton of the class. don't have return types . we cannot refer to their address.
+  //constructor is a specail memeber function with the same name as of the class and it is used to initalize the objects of it's class .is is automatically invoked whenever an object is created .should be in the public secton of the class. don't have return types . we cannot refer to their address.
   /*#include<iostream>
   using namespace std;
    class complec{
@@ -1569,5 +1574,1359 @@ for(int i=0 ; i<bl;i++){
 for(int i=0 ; i<cl;i++){
   cout<< c[i]<<" ";
 }
+return 0;
+}*/
+
+//**********INHERITANCE IN OOP*********
+/*#include<iostream>
+using namespace std;
+class employee{
+
+  public:
+  int id ;
+  void getid(int ID){
+    id = ID;
+  
+}
+void setid(){
+  cout<<"so the id of the employee is "<<id<<endl;
+}
+};
+class programmer :public employee{
+  public:
+ int num = 10;
+};
+int main(){
+employee s1,s3;
+s1.getid(6);
+s1.setid();
+programmer s2;
+cout<<s2.num<<endl;
+s2.getid(9);
+s2.setid();
+return 0;
+}*/
+
+//********example of sinmple inheritance********
+/*#include<iostream>
+using namespace std;
+class base{
+  private:
+  int data1;
+  public:
+  int data2;
+  void getdata(){
+     data1 = 3 ;
+      data2 = 5 ;
+  }
+  int setdata1(){
+    return data1;
+  }
+  int setdata2(){
+    return data2;
+  }
+};
+class derived:public base{
+  int data3;
+  public:
+  int process(){
+     return data3 = data2 * setdata1() ;
+  }
+  int display(){
+    cout<<"data 1 is "<<setdata1()<<endl;
+    cout<<"data2 is "<<data2<<endl;
+    cout<<"product of them is "<<data3<<endl;
+  }
+};
+int main(){
+  derived b1;
+  b1.getdata();
+  b1.process();
+  b1.display();
+
+return 0;
+}*/
+
+//**********OPERATOR OVERLOADING EXAMPLE *********
+//FINDING DISTENCE IN FEET AND INCHES BETWEEN TWO POINTS 
+/*#include<iostream>
+using namespace std;
+class distance{
+  double feet;
+  double inches;
+  public:
+  distance(){};
+  distance(){
+    feet = 0;
+    inches = 0 ;
+  }
+    distance(double f , double i){
+      feet = f ;
+      inches = i ;
+    }
+  
+  distance operator+(distance param){
+    distance t;
+    t.feet = feet + param.feet ;
+    t.inches = inches + param.inches ;
+    return t ;
+
+  }
+  void display(){
+    cout<<"feet "<<feet<<endl;
+    cout<<"inches "<<inches<<endl;
+  }
+};
+int main(){
+   distance d1(6 ,3.4) ;
+   distance d2(7,9.3);
+   distance d3;
+   d3 = d1 + d2 ;
+   d3.display();
+return 0;
+}*/
+
+
+//*********EXAMPLE 2***********
+/*#include<iostream>
+using namespace std;
+class Complex
+{
+ private :
+ double real;
+ double imag;
+ public:
+ Complex () {};
+ Complex (double, double);
+ Complex operator + (Complex);
+ void print();
+};
+Complex::Complex (double r, double i)
+{
+ real = r;
+ imag = i;
+}
+Complex Complex::operator+ (Complex param)
+{
+ Complex temp;
+ temp.real = real + param.real;
+ temp.imag = imag + param.imag;
+ return (temp);
+}
+void Complex::print()
+{
+ cout << real << " + i" << imag << endl;
+}
+int main ()
+{
+ Complex c1 (3.1, 1.5);
+ Complex c2 (1.2, 2.2);
+ Complex c3;
+ 
+ c3 = c1 + c2; //use overloaded + operator
+ c1.print();
+ c2.print();
+ c3.print();
+ return 0;
+}*/
+
+//********MULTILEVEL INHERTITANCE ********
+/*#include<iostream>
+using namespace std;
+class student{
+  protected:
+  int roll_no;
+  public:
+  void set_rollNo(int r){
+       roll_no = r ;
+  }
+  void get_rollNo(){
+    cout<<"so the roll no of the student is "<<roll_no<<endl;
+      }
+};
+class Exam : public student{
+  protected:
+  float maths ;
+  float english ;
+  public:
+  void set_marks(float m , float e){
+       maths = m ;
+       english = e ;
+  }
+  void get_marks(){
+    cout<<"so the maths marks of the student are "<<maths<<endl;
+     cout<<"so the english marks of the student are "<<english<<endl;
+      }
+
+};
+class result : public Exam{
+  protected:
+  float percentage  ;
+  public:
+  void display(){
+    get_rollNo();
+    get_marks();
+    cout<<"so the percentage of the student is "<<(maths + english)/2<<endl;
+  }
+};
+int main(){
+  result sana;
+  sana.set_rollNo(345);
+  sana.set_marks(70,89);
+  sana.display();
+return 0;
+}*/
+ 
+//**********MULTIPLE INHERITANCE ***********
+/*#include<iostream>
+using namespace std;
+class base1{
+  protected:
+  int base1;
+  public:
+  void setbase1(int a){
+    base1 = a ;
+  }
+};
+class base2{
+  protected:
+  int base2;
+  public:
+  void setbase2(int a){
+    base2 = a ;
+  }
+};
+class base3{
+  protected:
+  int base3;
+  public:
+  void setbase3(int a){
+    base3 = a ;
+  }
+};
+class derived :public base1 ,public base2,public base3 {
+  public:
+  void show(){
+    cout<<"so the value of base1 is "<<base1<<endl;
+    cout<<"so the value of base2 is "<<base2<<endl;
+    cout<<"so the value of base3 is "<<base3<<endl;
+      }
+};
+int main(){
+ derived spark;
+ spark.setbase1(67);
+ spark.setbase2(5643);
+ spark.setbase3(6);
+ spark.show();
+return 0;
+}*/
+
+//*********EXERCISE ODF INHERITANCE***********
+/*
+ Create two classes :
+1. SimmpleCalculator- Takes input of 2 number using a utility function and perfoms +,-,*,/
+and displays the result using another function
+2. ScientificCalculator - Takes input of 2 numbers using a utility functionand performs any four scientific operations
+of your choice and displays the results using another functions
+
+create a class hybridcalculator and inhherit it usinng these 2 classes:
+Q1. What type of inheritance you are using ?--> Multiple
+Q2. Which mode of inheritance are you using?--> public
+Q3. Create an object of hybridcalculator and displaybresults of simple and scientific calculator.
+Q4. How is code reusibility implemented?
+*/
+/*#include<iostream>
+#include<cmath>
+using namespace std;
+class simpleCalculator{
+  public:
+  double num1 ,num2 ;
+  void getdata(){
+    cout<<"enter the values of two numbers "<<endl;
+    cin>>num1>>num2;
+  }
+  double operate(){
+    char d;
+    cout<<"enter the operation you want to perform (+,-,*,/) "<<endl;
+    cin>>d;
+    switch(d){
+      case '+':
+      cout<<"the addition of two numbers is "<<num1+num2<<endl;
+      break;
+      case '-':
+      cout<<"the subtraction of two numbers is "<<num1-num2<<endl;
+      break;
+      case '*':
+      cout<<"the multiplication of two numbers is "<<num1*num2<<endl;
+      break;
+      case '/':
+      cout<<"the division of two numbers is "<<num1/num2<<endl;
+      break;
+      default:
+      cout<<"invalid data"<<endl;
+      break;
+        }
+  }
+
+};
+class ScientificCalculator{
+  public:
+  double num;
+  void getdata(){
+    cout<<"enter the value of number "<<endl;
+    cin>>num;
+  } 
+  double operate(){
+    char d;
+    cout<<"enter the operation you want to perform (log(l),cos(c),sqrt(s),exp(e)) "<<endl;
+    cin>>d;
+    switch(d){
+      case 'l':
+      cout<<"the lof of the given number is "<<log(num)<<endl;
+      break;
+      case 'c':
+      cout<<"the cos of the number is "<<cos(num)<<endl;
+      break;
+      case 's':
+      cout<<"the square root of the number is "<<sqrt(num)<<endl;
+      break;
+      case 'e':
+      cout<<"the exponent of the number is "<<exp(num)<<endl;
+      break;
+      default:
+      cout<<"invalid data"<<endl;
+      break;
+        }
+  } 
+};
+class hybridCalculator : public simpleCalculator ,public ScientificCalculator{
+  public:
+  void choose(){
+    char x;
+    cout<<"enter which calculator you wanna use, c for simple amd s fr scientific  "<<endl;
+    cin>>x;
+    switch(x){
+      case 'c':
+      simpleCalculator::getdata();
+      simpleCalculator::operate();
+      break;
+      case 's':
+      ScientificCalculator::getdata();
+      ScientificCalculator::operate();
+      break;
+      default:
+      cout<<"invalid response"<<endl;
+    }
+  }
+};
+int main(){
+hybridCalculator s1;
+s1.choose();
+return 0;
+}*/
+
+//********virtula class **********//
+/*
+student ---> test -----> result
+student -----> sport ----> result
+*/
+/*#include<iostream>
+using namespace std;
+class student{
+  protected:
+    int rollNo;
+    public:
+   void set_rollNo(int a){
+      rollNo = a ;
+          }
+          void get_rollNo(){
+            cout<<"so your roll no is "<<rollNo<<endl;
+          }
+};
+class test : virtual public student{
+  protected:
+    float physics , maths ;
+    public:
+      void set_marks(float m1 ,float m2){
+        physics = m1 ;
+        maths = m2 ;
+      }
+      void get_marks(){
+        cout<<"so the marks of subjects are :"<<endl
+        <<"physics : "<<physics<<endl
+        <<"maths : "<<maths<<endl;
+      }
+};
+class sport : virtual public student{
+  protected:
+    float scores;
+    public:
+    void set_scores(float s){
+      scores = s ;
+    }
+    void get_scores(){
+      cout<<"so the scores of the student in game are "<<scores<<endl;
+    }
+};
+class result : public test, public sport{
+  protected:
+   float total;
+   public:
+   void display(){
+   total = physics + maths + scores ;
+    get_rollNo();
+    get_marks();
+    get_scores();
+    cout<<"so the total marks of the sudent are "<<total<<endl;
+   }
+};
+int main(){
+  result name;
+  name.set_rollNo(234);
+  name.set_marks(34.5 ,56.4);
+  name.set_scores(45);
+  name.display();
+return 0;
+}*/
+
+//*********constructors in inheritance**********
+
+/*#include<iostream>
+using namespace std;
+class base1{
+  int data1;
+  public:
+  base1(int i){
+    data1 = i ;
+    cout<<"base1 class constructor called "<<endl;
+  }
+  void printdata(){
+    cout<<"the value od data 1 is "<<data1<<endl;
+  }
+};
+class base2{
+  int data2;
+  public:
+  base2(int i){
+    data2 = i ;
+    cout<<"base2 class constructor called "<<endl;
+  }
+  void printdata(){
+    cout<<"the value od data 2 is "<<data2<<endl;
+  }
+};
+class derived : public base1 , public base2{
+  int d1 , d2 ;
+  public:
+  derived(int q ,int d ,int y ,int u):base1(q),base2(d){
+        d1 = y ;
+        d2 = u ;
+        cout<<"derived constructor is being called "<<endl;
+  }
+};
+int main(){
+   derived scam(3,6,87,453);
+   scam.base1::printdata();
+   
+return 0;
+}*/
+//*********initialiozation list of constructor *******just a way of giving value to the class objects in construtor
+/*#include<iostream>
+using namespace std;
+class test{
+  int w ,r ;
+  public:
+  //test(int s ,int d):w(s),r(d)
+  test(int s ,int d):w(s),r(d + s)
+  //test(int s ,int d):w(s),r(d * 78)
+  //test(int s ,int d):w(s),r(d + w)
+  //test(int s ,int d):w(s + r),r(d)   it will give error as r was decalerd later even if we change their positiion in this lines it will still give error we have to declared them to solve the problem 
+
+  {
+    cout<<"constructir is being called "<<endl;
+    cout<<"the value of a is "<<w <<" amd b is "<<r<<endl;
+  }
+};
+int main(){
+test harry (47,78);
+return 0;
+}*/
+
+//***********REMINDING POINTERS ******** */
+/*#include<iostream>
+using namespace std;
+int main(){
+  //BASIC EXAMPLE 
+ int a = 6 ;
+ int* ptr = &a ;  //first adress os a is stored in ptr 
+ cout<<"the value of ptr is "<<*(ptr)<<endl;  //here we got the value of a as we de-refrenced ptr means we got value from address . 
+ //NEW KEYWORD (to dinamically initialize values )
+ int *p = new int(78);
+ cout<<"the value at address p is "<<*(p)<<endl;
+ //can also add a whole block of code like arrays 
+ int *arr = new int[3];
+  arr[0] = 45 ;
+  arr[1] = 36 ;
+  arr[2] = 82 ;
+ cout<<"the value of a arr[0] is "<<arr[0]<<endl;
+ cout<<"the value of a arr[1] is "<<arr[1]<<endl;
+ cout<<"the value of a arr[2] is "<<arr[2]<<endl;
+
+ //DELETE OPERATOR / KEYWORD ( to free the block of space that we made using new keyword )
+
+int *arr = new int[3];
+  arr[0] = 45 ;
+  arr[1] = 36 ;
+  arr[2] = 82 ;
+  delete[] arr;
+ cout<<"the value of a arr[0] is "<<arr[0]<<endl;
+ cout<<"the value of a arr[1] is "<<arr[1]<<endl;
+ cout<<"the value of a arr[2] is "<<arr[2]<<endl;
+
+return 0;
+}*/
+ //***********POinters to obejct 
+ /*#include<iostream>
+ using namespace std;
+ class complex{
+  int real ;
+  int imaginary ;
+  public:
+  void setdata(int a , int b){
+    real = a ;
+    imaginary = b ;
+  }
+  void getdata(){
+    cout<<"real part of matrix is "<<real<<endl;
+     cout<<"imaginary part of matrix is "<<imaginary<<endl;
+  }
+ };
+
+ int main(){
+  complex c1 ;
+  complex *ptr = &c1; 
+ // c1.setdata(34,78);
+  (*ptr).setdata(6,0);
+  (*ptr).getdata();
+   c1.setdata(34,78);
+  c1.getdata();
+ 
+ return 0;
+ }*/
+ //********8**** arrow operator ******
+ /*#include<iostream>
+ using namespace std;
+ class complex{
+  int real ;
+  int imaginary ;
+  public:
+  void setdata(int a , int b){
+    real = a ;
+    imaginary = b ;
+  }
+  void getdata(){
+    cout<<"real part of matrix is "<<real<<endl;
+     cout<<"imaginary part of matrix is "<<imaginary<<endl;
+  }
+ };
+
+ int main(){
+  complex c1 ;
+  complex *ptr = &c1; 
+ // c1.setdata(34,78);
+  (*ptr).setdata(6,0);
+  ptr->getdata(); arrow means to dereference 
+   c1.setdata(34,78);
+  c1.getdata();
+ 
+ return 0;
+ }*/
+ //***************ARRAYS OF OBJECT USING POITERS ***********
+ /*#include<iostream>
+ using namespace std;
+ class shopItem{
+  int price ;
+  int id ;
+  public:
+  int setdata(int p , int i){
+    price = i ;
+    id = p;
+  }
+  void getdata(){
+    cout<<"id of the item is "<<id<<endl;
+    cout<<"so the price of the item is "<<price<<endl;
+  }
+ };
+ int main(){
+  int size = 3 ;
+   shopItem *ptr = new shopItem[size] ;
+   shopItem *ptrtemp = ptr ;
+   for(int i = 0 ; i< size ; i++){
+    int s ,q ;
+    cout<<"enter the id and price of the item no. "<<i+1<<endl;
+    cin>>s>>q ;
+    (*ptr).setdata(s,q) ;
+    ptr++ ;
+   }
+   for(int i = 0 ; i < size ; i++){
+    cout<<"Item No . "<<i+1<<endl;
+    (*ptrtemp).getdata();
+    ptrtemp++ ;
+   }
+ return 0;
+ }*/
+ //**********************this keyword or pointer 
+ /*#include<iostream>
+ using namespace std;
+ class test {
+  int a ;
+  public :
+ test& setdata(int a){
+     this->a = a ;
+    }
+    void getdata(){
+      cout<<"the value of a is "<<a<<endl;
+    }
+ };
+ int main(){
+ test A ;
+ A.setdata(567).getdata();
+ A.getdata();
+ return 0;
+ }*/
+ //***************************pointers to derived class****************
+ /*#include<iostream>
+ using namespace std;
+ class base{
+  public:
+  int var_base ;
+  void display(){
+    cout<<"the value of the base class variable is "<<var_base<<endl;
+  }
+ };
+ class derived : public base{
+  public:
+  int var_derived;
+  void display(){
+    cout<<"displaying the base class vraible "<<var_base<<endl;
+    cout<<"the value of the derived class variable is "<<var_derived<<endl;
+  }
+ };
+ int main(){
+  base *base_class_pointer ;
+  derived obj_derived;
+  base obj_base ;
+  base_class_pointer = &obj_base ;
+  base_class_pointer = &obj_derived ; //pointing base class pointer to derived class object 
+  base_class_pointer->var_base = 678 ;
+  base_class_pointer->display();
+  derived *derived_class_pointer ;
+  derived_class_pointer = &obj_derived ;
+  derived_class_pointer->var_base = 567;
+  derived_class_pointer->var_derived = 67;
+  derived_class_pointer->display();
+
+ return 0;
+ }*/
+ //*****************VIRTUAL FUNCTION ********
+ //it is besically used to over-ride the default values like if a base class is getting values of derived class object then it gonna simply run display of derived class with the help of virtual function(without it will display function of base class )
+ /*#include<iostream>
+ using namespace std;
+ class base{
+  public:
+  int var_base = 997 ;
+  virtual void display(){
+    cout<<"the value of the base class variable is "<<var_base<<endl;
+  }
+ };
+ class derived : public base{
+  public:
+  int var_derived = 467;
+  void display(){
+    cout<<"displaying the base class vraible "<<var_base<<endl;
+    cout<<"the value of the derived class variable is "<<var_derived<<endl;
+  }
+ };
+ int main(){
+  base *base_class_pointer ;
+  derived obj_derived;
+  base obj_base ;
+  base_class_pointer = &obj_derived ;
+  base_class_pointer->display();
+
+  
+ return 0;
+ }*/
+ //*******************EXAMPLE OF VIRUAL FUNCTION ***********8
+ /*#include<iostream>
+ #include<cstring>
+ using namespace std;
+ class CWH{
+  protected :
+  string title ;
+  float rating ;
+  public:
+  CWH(string s , float r){
+    title = s ;
+    rating =  r ;
+  }
+  virtual void display(){
+    cout<<"yupta!!"<<endl;
+  }
+ };
+ class CWH_video : public CWH{
+  public :
+    float videoLength ;
+    CWH_video(string s , float r , float vl) : CWH( s ,  r){
+      videoLength = vl ;
+    }
+    void display(){
+      cout<<"so the title of the video is "<<title<<endl<<"with ratings of "<<rating<<" stars"<<endl<<"And lengt of te video is "<<videoLength<<" minutes "<<endl;
+    }
+
+ };
+ class CWH_text : public CWH {
+  public : 
+  float wordLength ;
+  CWH_text(string s , float r , float wl) :CWH(s,r){
+    wordLength = wl ;
+  }
+  void display(){
+      cout<<"so the title of the video is "<<title<<endl<<"with ratings of "<<rating<<" stars"<<endl<<"And the word length is "<<wordLength<<" per paragraph "<<endl;
+    }
+   };
+ int main(){
+  CWH *base_class_pointer ;
+   CWH_video video_tutorials("python tutorials " , 4.6 , 20) ;
+  CWH_text text_tutorials ("java tutorials " , 2.6 , 20);
+  base_class_pointer = &video_tutorials ;
+  base_class_pointer = &text_tutorials ;
+  base_class_pointer->display();
+   base_class_pointer->display();
+   
+ return 0;
+ }*/
+ //**************ABSTRATCT BASE CLASS  ********
+ //(a base class that we make in a sense that we have to make derived classes from it is known as abstract base class{should have atkleast onr virtual function} and a pure virtual function is do nothing function that can't be used a display we there is no display fu nction in derived classes  )
+ /*#include<iostream>
+ #include<cstring>
+ using namespace std;
+ class CWH{
+  protected :
+  string title ;
+  float rating ;
+  public:
+  CWH(string s , float r){
+    title = s ;
+    rating =  r ;
+  }
+  virtual void display() = 0 ;  //pure virtual function 
+   
+  
+ };
+ class CWH_video : public CWH{
+  public :
+    float videoLength ;
+    CWH_video(string s , float r , float vl) : CWH( s ,  r){
+      videoLength = vl ;
+    }
+    void display(){
+      cout<<"so the title of the video is "<<title<<endl<<"with ratings of "<<rating<<" stars"<<endl<<"And lengt of te video is "<<videoLength<<" minutes "<<endl;
+    }
+
+ };
+ class CWH_text : public CWH {
+  public : 
+  float wordLength ;
+  CWH_text(string s , float r , float wl) :CWH(s,r){
+    wordLength = wl ;
+  }
+  void display(){
+      cout<<"so the title of the video is "<<title<<endl<<"with ratings of "<<rating<<" stars"<<endl<<"And the word length is "<<wordLength<<" per paragraph "<<endl;
+    }
+   };
+ int main(){
+  CWH *base_class_pointer [2];
+   CWH_video video_tutorials("python tutorials " , 4.6 , 20) ;
+ CWH_text text_tutorials ("java tutorials " , 2.6 , 20);
+  base_class_pointer[0] = &video_tutorials ;
+base_class_pointer[1] = &text_tutorials ;
+  base_class_pointer[0]->display();
+   base_class_pointer[1]->display();
+   
+ return 0;
+ }*/
+ //*********************FILE I/O ****************
+ /*
+ the useful classes for working with files in c++
+ 1.fstream (base class)
+ 2.ifstream   (derived from fstream)
+ 3.ofstream  (derived from fstreambase)
+
+
+ in order to work with files in c++ , you will have to open it , primarily there are 2 ways to open a file 
+ 1.using the constructor 
+ 2.using the memer function open() of the class 
+ */  
+
+ /*#include<iostream>
+ #include<fstream>
+ #include<cstring>
+ using namespace std;
+ int main(){
+  //string str1 = "what a day !" ;
+  string str2 ;
+  //writing in a text file using constructor
+ // ofstream out("sample.txt");
+ // out<<str1 ;
+ out.close() ; //closing the link between that file ad our c++ program 
+  //reading from a file 
+ifstream in("sample.txt") ;
+in>>str2 ;
+getline(in , str2) ;
+//getline(in , str2) ;
+//getline(in , str2) ;
+cout<<str2 ;
+ return 0;
+ }*/
+ //********************using open() function for opening a file  */
+/*#include<iostream>
+#include<fstream>
+#include<string>
+using namespace std;
+int main(){
+  ofstream out ;
+  out.open("sample.txt") ;
+  out<<"well its working like that ";
+  out.close() ;
+  ifstream in ;
+  string st , st2 ;
+  in.open("smaple.txt");
+  //using while loop to read all  lines  in file 
+  while(in.eof()== 0){
+    getline(in , st);
+    cout<<st<<endl; 
+  }
+return 0;
+}*/
+//********************TEMPLATES IN C++*************
+/*#include<iostream>
+
+using namespace std;
+template <class T>
+class vector{
+  public:
+  T *arr ;
+  int size ;
+  vector(int m){
+    size = m ;
+    arr = new T[size] ;
+  }
+  T dotProduct(vector &v){
+    T d = 0 ;
+    for(int i = 0 ; i < size ; i++){
+      d = d +  this->arr[i] * v.arr[i] ;
+    }
+      return d ;
+  }
+};
+int main(){
+ vector <float>v1(3);
+ v1.arr[0] = 4.6;
+ v1.arr[1] = 5.38;
+ v1.arr[2] = 1;
+ vector <float>v2(3);
+ v2.arr[1] = 0;
+ v2.arr[2] = 1.3;
+ v2.arr[0] = 1;
+ float a = v1.dotProduct(v2);
+ cout<<a ;
+
+return 0;
+}*/
+//******************TEMPLATES WITH MULTIPLE PARAMETERS *********
+/*#include<iostream>
+#include<cstring>
+using namespace std;
+template <class T1, class R2>
+class sta{
+  public:
+    T1 data1 ;
+    R2 data2 ;
+    sta(T1 a , R2 b){
+      data1 = a ;
+      data2 = b ;
+    }
+    void display(){
+      cout<<"the name of the girl is "<<data1<<endl<<"height of the girl is "<<data2<<endl;
+    }
+};
+int main(){
+  sta <string , float>star("rosa ninean" , 5.6) ;
+  star.display();
+
+return 0;
+}  */
+//*****************TEMPLATES WITH DEFAULT PARAMETERS **********
+/*#include<iostream>
+using namespace std;
+template<class t1 = int , class t2 = float >
+class potter{
+  public:
+  t1 data1 ;
+  t2 data2 ; 
+  potter(t1 a , t2 b){
+    data1 = a ;
+    data2  =b ;
+  }
+  void display(){
+    cout<<"the value od data1 id "<<data1<<endl;
+    cout<<"the value of data2 is "<<data2<<endl;
+  }
+};
+int main(){
+    potter< > h(4  ,  .078);
+    h.display();
+return 0;
+}*/
+///**********function template we can use different data types in saame function using function template
+/*#include<iostream>
+using namespace std;
+template<class  T1 , class T2>
+float avgFun(T1 a , T2 b){
+  float avg = (a+b)/2.0 ; 
+  return avg ; 
+}
+
+//**************making swap function as wll 
+
+template<class t>
+int swapp(t &a , t &b){
+  int temp = a ;
+  a = b ;
+   b = temp ;
+}
+int main(){
+   float f ;
+   f  = avgFun(4 ,7.7 );
+  cout<<"average of two numbers is "<<f<<endl ; 
+  int x =5 ,  y = 9 ;
+  swapp(x , y) ;
+  cout<<x<<endl<<y ;
+return 0;
+}*/
+// ********************  making  template functions out of the class 
+/*#include<iostream>
+using namespace std;
+template<class t1 = int , class t2 = float >
+class potter{
+  public:
+  t1 data1 ;
+  t2 data2 ; 
+  potter(t1 a , t2 b){
+    data1 = a ;
+    data2  =b ;
+  }
+  void display();
+};
+template<class t1 , class t2 >
+void potter<t1 , t2 > :: display(){
+    cout<<"the value od data1 id "<<data1<<endl;
+    cout<<"the value of data2 is "<<data2<<endl;
+}
+int main(){
+    potter< > h(4  ,  .078);
+    h.display();
+return 0;
+}*/
+//**********************function overloading ******************
+/*#include<iostream>
+using namespace std;
+template <class T>
+void display(T a){
+  cout<<"thsi is a tempelized function "<<a<<endl;
+}
+void display(int a){
+  cout<<"thsi is a normla function "<<a<<endl;
+}
+
+int main(){
+display(8) ;  //exact match takes the highest priority (now the function value is int so normla function wll be displayd if we cahnge the value then tenmplate func will be displayed )
+return 0;
+}*/
+
+//*****************vectors in STL C++ ********************
+/*#include<iostream>
+#include<vector>
+using namespace std;
+template <class T>
+void display(vector<T> &v){
+  for(int i = 0 ; i<v.size() ; i++){
+    cout<<v[i]<<" ";
+   // cout<<v.at(i)<<" "; //will teel us where the element is present 
+  }
+  cout<<endl;
+}
+int main(){
+  vector<int> vec1 ;  //zero length vector 
+  //vector<char> vec2(4) 4-eleemnt character vector 
+  //vector<char> vec3(vec2) 4 element char vector from vec 2
+ // vector<int> vec4 (7,13) ;7 element vector of 13s (13 will be displayed 7 times )
+  //display(vec4);
+
+  int element;
+  int size ;
+  cout<<"enter the value of size"<<endl;
+  cin>>size;
+  for(int i = 0 ; i <size ; i++){
+    cout<<"enter the value of element "<<i<<endl;
+    cin>>element;
+    vec1.push_back(element);   //using push_back vector method
+  }
+ vec1.pop_back(); //will remove last element of the vector 
+  display(vec1) ;
+  vector<int>  :: iterator iter = vec1.begin();
+  vec1.insert(iter+1,5 , 8776); //insert method of the vector  & 5 copies will be inserted after 1
+  display(vec1) ;
+return 0;
+}*/
+//*************LIST IN C++**********************
+/*#include<iostream>
+#include<list>
+using namespace std;
+void display(list<int> &lst){
+      list<int> :: iterator it;
+      for(it = lst.begin();it!=lst.end();it++){
+        cout<<*it<<"  ";
+      }
+      cout<<endl;
+}
+int main(){
+   list<int> list1 ;  //list of zero length
+   list<int> list2(3);   //empty list of size 7
+   list1.push_back(6);
+   list1.push_back(48);
+   list1.push_back(9);
+   list1.push_back(8);
+   list1.push_back(142);
+   display(list1);
+   //list1.remove(48);    remove method
+   //list1.pop_front();
+   //list1.sort();   sorting the list
+   //display(list1);
+   list<int>::iterator iter;
+   iter = list2.begin();
+   *iter = 67 ;
+   iter++ ;
+   *iter = 3 ;
+   iter++ ;
+   *iter = 90 ;
+   iter++ ;
+   display(list2);
+   //merding the two lists
+   cout<<"after merging"<<endl;
+   list1.merge(list2);
+   display(list1);
+   //reversing 
+   cout<<"after reversing"<<endl;
+   list1.reverse();
+   display(list1);
+   return 0;
+}*/
+//***********MAP IN STL C++*************
+/*#include<iostream>
+#include<map>
+#include<string>
+using namespace std;
+int main(){
+//maps are associative arrays 
+map<string , int> marksMap;
+marksMap["sabashta"] = 46 ;
+marksMap["halim"] = 8 ;
+marksMap["adam"] = 92 ;
+marksMap["haya"] = 14 ;
+marksMap.insert({{"taliya",46}, {"fateh",79}}) ;
+map<string , int>::iterator iter ;
+for(iter = marksMap.begin();iter!=marksMap.end();iter++){
+  cout<<(*iter).first<<" "<<(*iter).second<<endl;
+}
+return 0;
+}*/
+//************functional objects in c++ **********
+//function object(functor) : function wrapped in a class so that it is available as an object
+/*#include<iostream>
+#include<functional>
+#include<algorithm>
+using namespace std;
+int main(){
+  int arr[] = {3,81,1,5,96,13,6,8,2,34};
+  //sort(arr,arr+10) ;
+  sort(arr,arr+10 , greater<int>() ) ;
+  for(int i=0 ; i<10 ; i++){
+    cout<<arr[i]<<" " ; 
+  }
+return 0;
+}*/
+//***************** 2-D arrays ********
+/*#include<iostream>
+using namespace std;
+int main(){
+  int arr[4][4];
+  for(int i=0 ;i<4 ; i++){
+    for(int j=0 ; j<4 ; j++){
+      cin>>arr[i][j];
+    }
+  }
+  cout<<"so the final output is "<<endl;
+  for(int i=0 ;i<4 ; i++){
+    for(int j=0 ; j<4 ; j++){
+      cout<<arr[i][j]<<" ";
+    }
+    cout<<endl;
+  }
+
+return 0;
+}*/
+
+//*************************linked list *******
+/*(a linear data structure which is formed by the collection of nodes in node there is data ad the next node's address(pointer of node type ) )A dynamic data structure can grow or shrink at runtime (no waste of mamory, inserction and delection is easy) TYPES OF LINKED LIST 
+* sigly linkedlist
+*doubly linkedlist 
+*circular linkedlist  */
+/*#include<iostream>
+using namespace std;
+class Node{
+  public:
+  int data = 93;
+  Node* next ;
+  Node(int data){   //constructor 
+    this->data = data ;
+    this->next = NULL ;
+  }
+
+};
+void InsertAtHead(Node* &head , int d){
+      //creating new node
+      Node* temp = new Node(d);
+      temp->next = head ;
+      head = temp ;
+}
+void InsertAtTail(Node* &head , int d){
+  Node* temp = new Node(d);
+  temp->next = head;
+  head = temp ; 
+}
+// void print(Node* &head){
+//   Node* temp = head ;
+//   while(temp != NULL){
+//     cout<<temp->data<<endl;
+//     temp = temp->next;
+//   }
+//   cout<<endl;
+// }
+void print(Node* &head){
+  Node* temp = head ;
+  while(temp != NULL){
+    cout<<temp->data<<endl;
+    temp = temp->next;
+  }
+  cout<<endl;
+}
+int main(){
+    Node* node1 = new Node(10);
+    //cout<<node1 -> data <<endl;
+    //cout<<node1->next<<endl;
+  Node* head  = node1 ;
+// Node* tail = node1 ;
+    print(head);
+    //InsertAtHead(head , 20) ;
+    InsertAtTail(head, 20);
+    print(head);
+InsertAtTail(head, 30);
+    print(head);
+
+return 0;
+}*/
+//********************linked list 
+/*#include<iostream>
+using namespace std;
+class node{
+  public:
+  int data ;
+  node* next ;
+  node(int val){
+    data = val ;
+    next = NULL ;
+  }
+};
+ void insertAtTail(node* &head , int val){
+   node* n = new node(val);
+   if(head == NULL){
+    head =  n ;
+    return ;
+   }
+   node* temp = head ;
+   while(temp->next != NULL){
+    temp = temp->next ;
+  
+   }
+   temp->next = n ;
+ }
+ void insertAtHead(node* &head , int val){
+  node* n = new node(val);
+  n->next = head ;
+  head = n ;
+ }
+ bool search(node* head , int key){
+  node* temp = head ;
+  while(temp->next != NULL){
+    if(temp->data == key){
+      cout<<"your key is found "<<endl;
+    }   
+    temp = temp->next ;
+
+    }
+    return false ;
+  }
+  void deleteAtHead(node* &head){
+    node* todelete = head ;
+    head = head->next ;
+    delete todelete ;
+  }
+  void deletion(node* &head , int del){
+    node* temp = head ;
+    while(temp->next->data != del){
+      temp = temp->next ;
+    }
+  node* todelete = temp->next ;
+  temp->next = temp->next->next ;
+  delete todelete ;
+
+  }
+  
+ void display(node* head){
+  node* temp = head ;  // a temp poinetr starting from haed
+  while(temp!=NULL){
+    cout<<temp->data<<" ";
+    temp = temp->next ; 
+  }
+  cout<<endl;
+ }
+int main(){
+  node* head = NULL ;
+  insertAtTail(head , 10);
+  insertAtTail(head , 20);
+  insertAtTail(head , 30);
+   display(head);
+  insertAtHead(head , 40);
+  display(head);
+  cout<<search(head , 60)<<endl;
+  search(head, 20);
+  deletion(head , 20); // gonna get an error if delete the first node but can delete from end easily
+  //deleteAtHead(head);  //deleting from head
+  display(head);
+
+return 0;
+}*/
+//***********operator overloading 
+// we can perform operations on data tupes like int a + b (biuld in data types )_but we cannot perform them on aa or cc thats why operator overloading was intrioduced 
+// now if we overload the function like cc = aa + bb
+// which means that the plus is acting like a fuinction here and with the reference of aa we are calling plus operator function and passing bb as an argument and in return the value will be stored in cc (function with argument and with return) .
+//we will pass bb as an argument  -->>
+            //  demo(return type) operator+(demo bb){
+            //     demo cc ;
+            //     cc.a = a + bb.a ;
+            //     return cc ;
+            //  }
+            // void operator++(){
+            //   x = x+1 ;   //for ++a
+            // }
+            //void operator++(){
+            //   x = x+1 ;   //for a++
+            // }
+            //assignment opertaor aa=bb
+            // void operator=(demo bb){
+            //   a=bb.a ;
+            // }
+            //a function with argument and with return (demo is a class type in above code )
+//adding complex numbers using operator overloading 
+/*#include<iostream>
+using namespace std;
+class complex{
+  int r , i ;
+  public:
+  int getdata(){
+    cout<<"enter the value of real :"<<endl;
+    cin>>r;
+    cout<<"enter the value of imaginary"<<endl;
+    cin>>i;
+  }
+  void display(){
+    cout<<r<<" + "<<i<<"i"<<endl;
+  }
+  complex operator+(complex bb){
+    complex cc ;
+    cc.r = r + bb.r ;
+    cc.i = i + bb.i ;
+    return cc ;
+  }
+};
+int main(){
+  complex aa ,bb ,cc ;
+  aa.getdata();
+  bb.getdata();
+  cc = aa+bb ;
+  aa.display();
+  bb.display();
+  cc.display();
+
+return 0;
+}*/
+//************tower of hanoi (recurssion)***************
+//let we have 3 towers A, B and C .we want to move disks from A to C with the help of B . so here A = source , B = auxillary and C = destination . so we will move our end-1 disks from source to aux and then finally to destination by using recurssion function .
+/*#include<iostream>
+using namespace std;
+void towersOfHanoi(int start , int end , char source , char aux , char destination){
+    if(start > end ){
+      return ;
+    }
+    towersOfHanoi(start ,end-1 , source , destination , aux) ;
+    cout<<"move disk "<<end<<" from "<<source<<" to "<<destination<<endl;
+    towersOfHanoi(start , end-1 , aux, source , destination);
+    }
+int main(){
+     towersOfHanoi(1,5,'A','B','C');
+
+return 0;
+}*/
+//***********recurssion ***********
+//when a function calls its own self to make the code esaier its called recurssion 
+//let's find factorial using recurssion function 
+/*#include<iostream>
+using namespace std;
+int factorial(int n ){
+  if (n==0){  //base condition to decide where to stop
+    return 1;
+  }
+  
+  int f = n * factorial(n-1);
+  
+}
+int power(int x){
+  if(x==0){
+    return 1;
+  }
+  int po= 2 * power(x-1);
+}
+int main(){
+  cout<<"enter the value of factorial no. you want"<<endl;
+  int n;
+  cin>>n;
+       cout<<factorial(n)<<endl;
+       cout<<"enter the power value"<<endl;
+       int p;
+       cin>>p;
+      cout<< power(p);
+
 return 0;
 }*/
