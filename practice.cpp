@@ -438,7 +438,7 @@ return 0;
 }*/
 //inline function is like request to compiler ,its upto compiler if it wants to make a function inline or not.
 //*******finding factorial**********
-//recurring function 
+//recurring function  (never forget to add a base case in your recursive function)
 /*#include<iostream>
 using namespace std;
 int factorial(int n){
@@ -469,6 +469,27 @@ int main(){
   cin>>x;
 cout<<"so the fibbonacci series for number "<<x<<" is "<<fibbo(x);
 return 0;
+}*/
+//getting whole series 
+/*#include<iostream>
+using namespace std;
+
+int fibbo(int n){
+  if(n<2){
+    return 1;
+  }
+  return fibbo(n-2) + fibbo(n-1);
+}
+
+int main(){
+  int x;
+  cout<<"enter the value of x ";
+  cin>>x;
+  cout<<"Fibonacci series up to "<<x<<" is: ";
+  for(int i=0; i<=x; i++){
+    cout<<fibbo(i)<<" ";
+  }
+  return 0;
 }*/
 //*****function overloading(different functions having same name and we are using their different parameters )
 /*#include<iostream>
@@ -1322,7 +1343,7 @@ bd1.show();
 return 0;
 }*/
 //***********COPY CONSTRUCTOR**********
-//oue compiler allocates a default copy constructor to every program but firts it checks if the constructor is present or not 
+//our compiler allocates a default copy constructor to every program but firts it checks if the constructor is present or not 
 /*#include<iostream>
 using namespace std;
 class number{
@@ -1833,8 +1854,8 @@ create a class hybridcalculator and inhherit it usinng these 2 classes:
 Q1. What type of inheritance you are using ?--> Multiple
 Q2. Which mode of inheritance are you using?--> public
 Q3. Create an object of hybridcalculator and displaybresults of simple and scientific calculator.
-Q4. How is code reusibility implemented?
-*/
+Q4. How is code reusibility implemented?*/
+
 /*#include<iostream>
 #include<cmath>
 using namespace std;
@@ -1882,7 +1903,7 @@ class ScientificCalculator{
     cin>>d;
     switch(d){
       case 'l':
-      cout<<"the lof of the given number is "<<log(num)<<endl;
+      cout<<"the log of the given number is "<<log(num)<<endl;
       break;
       case 'c':
       cout<<"the cos of the number is "<<cos(num)<<endl;
@@ -1925,7 +1946,7 @@ s1.choose();
 return 0;
 }*/
 
-//********virtula class **********//
+//********virtula class **********
 /*
 student ---> test -----> result
 student -----> sport ----> result
@@ -2001,7 +2022,7 @@ class base1{
     cout<<"base1 class constructor called "<<endl;
   }
   void printdata(){
-    cout<<"the value od data 1 is "<<data1<<endl;
+    cout<<"the value of data 1 is "<<data1<<endl;
   }
 };
 class base2{
@@ -2113,7 +2134,7 @@ return 0;
  
  return 0;
  }*/
- //********8**** arrow operator ******
+ //************ arrow operator ******
  /*#include<iostream>
  using namespace std;
  class complex{
@@ -2307,7 +2328,7 @@ return 0;
  return 0;
  }*/
  //**************ABSTRATCT BASE CLASS  ********
- //(a base class that we make in a sense that we have to make derived classes from it is known as abstract base class{should have atkleast onr virtual function} and a pure virtual function is do nothing function that can't be used a display we there is no display fu nction in derived classes  )
+ //(a base class that we make in a sense that we have to make derived classes from it is known as abstract base class{should have atkleast onr virtual function} and a pure virtual function is do nothing function that can't be used a display we there is no display function in derived classes  )
  /*#include<iostream>
  #include<cstring>
  using namespace std;
@@ -2829,7 +2850,7 @@ int main(){
 return 0;
 }*/
 //***********operator overloading 
-// we can perform operations on data tupes like int a + b (biuld in data types )_but we cannot perform them on aa or cc thats why operator overloading was intrioduced 
+// we can perform operations on data tupes like int a + b (biuld in data types )_but we cannot perform them on aa or cc (objects taht we make ) thats why operator overloading was intrioduced 
 // now if we overload the function like cc = aa + bb
 // which means that the plus is acting like a fuinction here and with the reference of aa we are calling plus operator function and passing bb as an argument and in return the value will be stored in cc (function with argument and with return) .
 //we will pass bb as an argument  -->>

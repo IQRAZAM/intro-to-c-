@@ -24,7 +24,7 @@ int main(){
   int main(){
    string input;
    cout<<"enter the string you want to enter"<<endl;
-   cin>>input;
+   getline(cin , input);
    for(int i=input.length()-1;i>=0;i--){
     cout<<input[i];
    }
@@ -298,7 +298,7 @@ c1.X();
 
 return 0;
 }*/
-#include<iostream>
+/*#include<iostream>
 using namespace std;
 int main(){
 for(int i=1;i<=9;i++){
@@ -313,6 +313,6 @@ for(int i=1;i<=9;i++){
           cout<<endl;
 }
 return 0;
-}
+}*/
 
     

@@ -47,7 +47,7 @@ return 0;
  return 0;
  }*/
  //Q5 print odd or even numbers only from 1 to 100
-/* #include<iostream>
+/*#include<iostream>
  using namespace std;
  int main(){
  for(int i = 1;i<=100;i+=2){
@@ -209,7 +209,7 @@ return 0;
       }
    }
    if(k==i){
-      cout<<k<<endl;
+      cout<<k<<" ";
    }
  }
  return 0;
@@ -290,7 +290,7 @@ return 0;
  }
   return 0;
  }*/
- //Q18 Print ello world without a semi colon
+ //Q18 Print hello world without a semi colon
  /*#include<iostream>
  using namespace std;
  int main(){
@@ -469,22 +469,21 @@ return 0;
  /*#include<iostream>
  using namespace std;
  int main(){
-  int i,j,k;
+  int i,j;
   for(  i=1; i<=5; i++){
-    k=1;
+  
     for( j=1; j<=9; j++){
-      if(j>=6-i && j<=4+i && k==1){
+      if(j>=6-i && j<=4+i ){
         cout<<"*";
-        k=0;
-      }else{
-        cout<<" ";
-        k=1;
-      }
+       
+    } else{
+      cout<<" ";
+    }
     }
     cout<<endl;
-  }
+  } 
  return 0;
- }*/
+ } */
 
  //Q 29 PATTERN 
  /*#include<iostream>
@@ -522,6 +521,18 @@ return 0;
 }*/
  //Q 31 pattern
  /*#include<iostream>
+using namespace std;
+int main(){
+for(int i=1; i<=5; i++){
+  for(int j=1; j<=5; j++){
+    cout<<" * ";
+  }
+  cout<<endl;
+}
+return 0;
+}*/
+//can make it like that as well 
+/*#include<iostream>
 using namespace std;
 int main(){
 for(int i=1; i<=5; i++){
@@ -846,7 +857,6 @@ for(int i=1; i<=9; i++){
 return 0;
 }*/
 //Q49
-
 /*#include<iostream>
 using namespace std;
 int main(){
@@ -863,8 +873,7 @@ for(int i=1; i<=9; i++){
   cout<<endl;
 }
 return 0;
-}
-*/
+}*/
 //Q50 
 /*#include<iostream>
 using namespace std;
@@ -938,7 +947,7 @@ for(i=1 ; i<=5 ; i++){
   cout<<endl;
 }
 return 0;
-}*
+}*/
 //Q54 it is also known as floyde triangle which is a triangle of alphabets or also may be of numbers where ever row got the same no. of elements as its number like 1st got one element third got three elements etc 
 /*#include<iostream>
 using namespace std;
@@ -1027,7 +1036,7 @@ if(root*root == num){
 return 0;
 }*/
 //Q 58 find all the factors of a number 
-#include <iostream>
+/*#include <iostream>
 using namespace std;
 
 void factors(int num) {
@@ -1043,7 +1052,7 @@ int main() {
     cout << "The factors of " << num << " are : ";
     factors(num);
     return 0;
-}
+}*/
 
 
 
