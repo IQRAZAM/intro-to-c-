@@ -613,7 +613,7 @@ for(int i=1; i<=9; i++){
 return 0;
 }*/
 //Q 36
-/*#include<iostream>
+#include<iostream>
 using namespace std;
 int main(){
   int i,j,k=0;
@@ -629,7 +629,7 @@ for( i=1; i<=9; i++){
   cout<<endl;
 }
 return 0;
-}*/
+}
 //Q 37 
 /*#include<iostream>
 using namespace std;
