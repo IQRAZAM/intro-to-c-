@@ -659,7 +659,7 @@ cout<<"so the number in binary is "<<ans<<endl;
 return 0;
 }*/
 //converting from binary to decimal 
-#include<iostream>
+/*#include<iostream>
 using namespace std;
 int bintodec(int num){
     int ans = 0 , pow =1;
@@ -675,4 +675,175 @@ int bintodec(int num){
 int main(){
 cout<<bintodec(11);
 return 0;
+}*/
+///INTERSECTION OF TWO ARRAYS 
+/*#include<iostream>
+using namespace std;
+int main(){
+int arr1[6] = {1,2,3,4,8,9};
+int arr2[5] = {3,4,5,6,8};
+for(int i = 0 ; i<6 ;i++){
+    int ele = arr1[i];
+    for(int j=0;j<5;j++){
+        if(ele == arr2[j]){
+            cout<<arr2[j]<<" ";
+            arr2[j] = -3 ;
+            break ;
+        }
+    }
+
 }
+
+
+return 0;
+}*/
+///this approach is not that optimal so we will aply two pointer approach to make it more optimized and logically easy 
+/*#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+    int n= 10 ,m = 10 ;
+    int arr1[n] = {2,3,4,4,5,6,9};
+    int arr2[m] = {1,2,6,7,8}; 
+int j = 0, i = 0 ;
+vector<int> ans ;
+while(i<n && j<m){
+    if (arr1[i] == arr2[j]){
+        ans.push_back(arr1[i]);
+        i++;
+        j++;
+    }else if(arr1[i] < arr2[j]){
+         i++ ;
+    }else{
+        j++ ;
+    }
+}
+ // Print the ans vector
+    cout << "Common elements: ";
+    for (int k = 0; k < ans.size(); k++) {
+        cout << ans[k] << " ";
+    }
+    cout << endl;
+return 0;
+}*/
+//get a vector which contains the sum of elements in an array which are eqaul to a specific number
+/*#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+int main(){
+    int s = 6 ;
+    int n= 6 ;
+int arr[n] = {1,2,3,4,5,6};
+vector<int> ans ;
+for (int i =0 ; i <n;i++){
+    for(int j = i+1 ; j < n;j++){
+          if(arr[i]+arr[j] == s){
+            ans.push_back(min(arr[i],arr[j]));
+            ans.push_back(max(arr[i],arr[j]));
+          }
+    }
+}
+sort(ans.begin(),ans.end());
+cout << "Common elements: ";
+    for (int k = 0; k < ans.size(); k++) {
+        cout << ans[k] << " ";
+    }
+    cout << endl;
+return 0;
+}*/
+////now we have to find triplet whose sum is equal to a specific number 
+/*#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+int main(){
+    int s = 8 ;
+    int n= 6 ;
+int arr[n] = {1,2,3,4,5,6};
+vector<int> ans ;
+for (int i =0 ; i <n;i++){
+    for(int j = i+1 ; j < n;j++){
+        for(int k = j+1 ; k<n ; k++){
+          if(arr[i]+arr[j]+arr[k] == s){
+            ans.push_back(arr[i]);
+            ans.push_back(arr[j]);
+            ans.push_back(arr[k]);
+            
+          }
+    }
+}
+}
+//sort(ans.begin(),ans.end());
+cout << "Common elements: ";
+    for (int k = 0; k < ans.size(); k++) {
+        cout << ans[k] << " ";
+    }
+    cout << endl;
+return 0;
+}*/
+//////sort 0 , 1 we have an array containing 0 and 1 randomly and we have to sort them to all 0 on one side and 1 on te other
+/*#include<iostream>
+using namespace std;
+
+int main() {
+    int arr[11] = {1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0};
+    int i = 0, j = 10;
+
+    while (i < j) {
+        // Increment i until we find a 0
+        while (i < j && arr[i] == 1) {
+            i++;
+        }
+        // Decrement j until we find a 1
+        while (i < j && arr[j] == 0) {
+            j--;
+        }
+        // If i is still less than j, swap the elements
+        if (i < j) {
+            swap(arr[i], arr[j]);
+            i++;
+            j--;
+        }
+    }
+
+    // Print the modified array
+    for (int k = 0; k < 11; k++) {
+        cout << arr[k] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}*/
+//sort 0,1,2
+#include<iostream>
+using namespace std;
+
+int main() {
+    int arr[11] = {1, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1};
+    int n = 11;
+
+    int low = 0, mid = 0, high = n -1;
+
+    while (mid <= high) {
+        if (arr[mid] == 0) {
+            swap(arr[low], arr[mid]);
+            low++;
+            mid++;
+        } else if (arr[mid] == 1) {
+            mid++;
+        } else if (arr[mid] == 2) {
+            swap(arr[mid], arr[high]);
+            high--;
+        }
+    }
+
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+
